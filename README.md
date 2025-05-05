@@ -1,9 +1,1 @@
-![Metrics](/github-metrics.svg)
-
-[<img width="390" src="https://raw.githubusercontent.com/MaKSiiMe/metrics/master/metrics.classic.svg">](#)
-
-[<img width="390" src="https://raw.githubusercontent.com/MaKSiiMe/metrics/master/metrics.plugin.wakatime.svg">](#)
-
-[<img width="390" src="https://github-readme-stats.vercel.app/api?username=MaKSiiMe&hide_border=true&show_icons=true&theme=tokyonight&bg_color=FF000000&text_color=777777">](#)
-
-[<img width="390" src="http://github-readme-streak-stats.herokuapp.com?user=MaKSiiMe&theme=tokyonight&hide_border=true&&dates=777777&background=FF000000">](#)
+![Metrics](https://metrics.lecoq.io/MaKSiiMe?template=classic&languages=1&achievements=1&activity=1&introduction=1&projects=1&repositories=1&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&repositories.batch=100&repositories.forks=false&repositories.affiliations=owner&languages=false&languages.limit=8&languages.threshold=0%25&languages.other=false&languages.colors=github&languages.sections=most-used&languages.indepth=false&languages.analysis.timeout=15&languages.analysis.timeout.repositories=7.5&languages.categories=markup%2C%20programming&languages.recent.categories=markup%2C%20programming&languages.recent.load=300&languages.recent.days=14&repositories=false&repositories.pinned=0&repositories.starred=0&repositories.random=0&repositories.order=featured%2C%20pinned%2C%20starred%2C%20random&achievements=false&achievements.threshold=C&achievements.secrets=true&achievements.display=detailed&achievements.limit=0&activity=false&activity.limit=5&activity.load=300&activity.days=14&activity.visibility=all&activity.timestamps=false&activity.filter=all&projects=false&projects.limit=4&projects.descriptions=false&introduction=false&introduction.title=true&config.timezone=Europe%2FParis)
