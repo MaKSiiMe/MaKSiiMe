@@ -1,5 +1,3 @@
-# Metrics
-
 [<img align="left" width="400" src="https://raw.githubusercontent.com/MaKSiiMe/MaKSiiMe/main/github-metrics.svg">](#)
 
 [<img align="right" width="400" src="https://github-readme-stats.vercel.app/api?username=MaKSiiMe&hide_border=true&show_icons=true&theme=tokyonight&bg_color=FF000000&text_color=777777">](#)
