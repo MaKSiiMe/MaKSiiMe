@@ -1,0 +1,82 @@
+name: Update profile README (activity + stars)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 5 * * *"  # 05:00 UTC daily (~07:00 Europe/Paris)
+
+permissions:
+  contents: write  # required to commit changes
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build sections with GitHub API
+        id: build
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // --- Inputs & helpers ---
+            const fs = require('fs');
+            const path = 'README.md';
+            const username = process.env.TARGET_USERNAME || context.repo.owner; // fallback to repo owner
+            function fmtDate(iso) { return iso ? iso.split('T')[0] : ''; }
+
+            // --- Fetch latest public events ---
+            const { data: events } = await github.rest.activity.listPublicEventsForUser({
+              username,
+              per_page: 5
+            });
+            const activity = (events || []).map(e => {
+              const date = fmtDate(e.created_at);
+              const repo = e.repo ? e.repo.name : '';
+              const url = repo ? `https://github.com/${repo}` : '';
+              const type = e.type || 'Event';
+              return `- ${date} — **${type}** in [${repo}](${url})`;
+            }).join('\n') || '- No recent public activity.';
+
+            // --- Fetch recently starred repos ---
+            const { data: stars } = await github.rest.activity.listReposStarredByUser({
+              username,
+              per_page: 5
+            });
+            const starred = (stars || []).map(s => {
+              const r = s.repo || s; // compat across octokit versions
+              const full = r.full_name || (r.owner?.login && r.name ? `${r.owner.login}/${r.name}` : '');
+              const desc = (r.description || '').replace(/\r?\n/g, ' ').trim();
+              return `- [${full}](https://github.com/${full}) — ${desc}`;
+            }).join('\n') || '- No recent stars.';
+
+            // --- Update README between markers ---
+            let md = fs.readFileSync(path, 'utf8');
+            function replaceBlock(tag, content) {
+              const start = `<!-- ${tag}:START -->`;
+              const end = `<!-- ${tag}:END -->`;
+              const re = new RegExp(`${start}[\s\S]*?${end}`, 'm');
+              if (!re.test(md)) {
+                throw new Error(`Marker not found: ${tag}. Ensure markers exist in README.md`);
+              }
+              md = md.replace(re, `${start}\n${content}\n${end}`);
+            }
+            replaceBlock('ACTIVITY', activity);
+            replaceBlock('STARS', starred);
+            fs.writeFileSync(path, md);
+            core.setOutput('updated', 'true');
+
+      - name: Commit & push if changed
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add README.md
+            git commit -m "chore(readme): update activity & stars (automated)"
+            git push
+          else
+            echo "No changes to commit."
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
