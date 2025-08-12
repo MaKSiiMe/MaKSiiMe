@@ -1,4 +1,4 @@
-name: Update profile README (activity only)
+name: Update profile README (merged activity)
 
 on:
   workflow_dispatch:
@@ -17,86 +17,123 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build activity section with GitHub API
+      - name: Build merged activity (events + stars)
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
 
-            // Detect README file regardless of casing
+            // --- Locate README (any casing)
             const candidates = ['README.md','Readme.md','README.MD','readme.md'];
-            let readmePath = candidates.find(p => fs.existsSync(p));
-            if (!readmePath) {
-              core.setFailed('README file not found.');
-              process.exit(1);
-            }
+            const readmePath = candidates.find(p => fs.existsSync(p));
+            if (!readmePath) { core.setFailed('README file not found.'); process.exit(1); }
 
-            // Ensure ACTIVITY section exists
+            // --- Ensure ACTIVITY section exists (exact markers)
             function ensureSection(tag, title, md) {
-              const startMarker = `<!-- ${tag}:START -->`;
-              const endMarker = `<!-- ${tag}:END -->`;
-              if (!md.toLowerCase().includes(startMarker.toLowerCase()) || !md.toLowerCase().includes(endMarker.toLowerCase())) {
-                md += `\n\n## ${title}\n${startMarker}\n${endMarker}\n`;
+              const start = `<!-- ${tag}:START -->`;
+              const end   = `<!-- ${tag}:END -->`;
+              if (!md.toLowerCase().includes(start.toLowerCase()) || !md.toLowerCase().includes(end.toLowerCase())) {
+                md += `\n\n## ${title}\n${start}\n${end}\n`;
                 fs.writeFileSync(readmePath, md);
               }
             }
-
             let md = fs.readFileSync(readmePath, 'utf8');
             ensureSection('ACTIVITY', '🔄 Latest activity', md);
             md = fs.readFileSync(readmePath, 'utf8');
 
-            // Format date
-            function fmtDate(iso) { return iso ? iso.split('T')[0] : ''; }
+            // --- Helpers
             const username = process.env.TARGET_USERNAME || context.repo.owner;
-
-            // Icons for event types
-            const typeIcon = {
+            const icon = {
               WatchEvent: '👀 Watched',
               CreateEvent: '🆕 Created',
-              PushEvent: '📤 Pushed',
-              ForkEvent: '🍴 Forked',
+              PushEvent:   '📤 Pushed',
+              ForkEvent:   '🍴 Forked',
               IssuesEvent: '🐞 Issue',
               IssueCommentEvent: '💬 Issue comment',
               PullRequestEvent: '🔀 PR',
               PullRequestReviewEvent: '📝 PR review',
               ReleaseEvent: '🏷️ Release',
               PublicEvent: '🌐 Public',
-              StarEvent: '⭐ Starred'
+              Starred: '⭐ Starred'
+            };
+            const fmt = iso => {
+              if (!iso) return '';
+              const d = new Date(iso);
+              const y = d.getUTCFullYear();
+              const m = String(d.getUTCMonth()+1).padStart(2,'0');
+              const day = String(d.getUTCDate()).padStart(2,'0');
+              return `${y}-${m}-${day}`;
             };
 
-            // Fetch last events
+            // --- Fetch public events (newest first)
             const { data: eventsRaw } = await github.rest.activity.listPublicEventsForUser({
               username,
-              per_page: 30
+              per_page: 50
             }).catch(() => ({ data: [] }));
 
-            // Transform + deduplicate
-            const seen = new Set();
-            const events = [];
+            const asEventItems = (eventsRaw || []).map(e => ({
+              kind: 'event',
+              id: e.id,                        // unique id from events API
+              date: e.created_at,
+              type: e.type,                    // e.g., PushEvent
+              repo: e.repo?.name || '',
+              url: e.repo ? `https://github.com/${e.repo.name}` : '',
+              desc: ''
+            }));
 
-            for (const e of eventsRaw || []) {
-              const date = fmtDate(e.created_at);
-              const repo = e.repo ? e.repo.name : '';
-              const url = repo ? `https://github.com/${repo}` : '';
-              const label = typeIcon[e.type] || e.type || 'Event';
-              const line = `- 📅 ${date} — ${label} [${repo}](${url})`;
-              const key = `${date}-${label}-${repo}`;
-              if (!seen.has(key)) {
-                seen.add(key);
-                events.push(line);
-              }
-              if (events.length >= 10) break;
+            // --- Fetch last stars (need starred_at; fall back to updated_at if missing)
+            // Note: github-script uses Octokit which supports the star media type implicitly in most cases.
+            const { data: starsRaw } = await github.rest.activity.listReposStarredByUser({
+              username,
+              per_page: 50
+            }).catch(() => ({ data: [] }));
+
+            const asStarItems = (starsRaw || []).map(s => {
+              const r = s.repo || s; // shape may vary
+              const starredAt = s.starred_at || r.starred_at || r.pushed_at || r.updated_at || r.created_at;
+              const full = r.full_name || (r.owner?.login && r.name ? `${r.owner.login}/${r.name}` : '');
+              return {
+                kind: 'star',
+                id: `star-${full}-${starredAt || ''}`,
+                date: starredAt,
+                type: 'Starred',
+                repo: full,
+                url: full ? `https://github.com/${full}` : '',
+                desc: (r.description || '').replace(/\r?\n/g, ' ').trim()
+              };
+            });
+
+            // --- Merge, sort by date desc
+            const merged = [...asEventItems, ...asStarItems]
+              .filter(x => x.repo && x.url && x.date)
+              .sort((a,b) => new Date(b.date) - new Date(a.date));
+
+            // --- Build final list:
+            // Rules: max 10 items; ≤ 2 occurrences per repo; dedupe exact items by unique id
+            const maxItems = 10;
+            const perRepoCap = 2;
+            const seenIds = new Set();
+            const perRepo = {};
+            const final = [];
+
+            for (const it of merged) {
+              if (seenIds.has(it.id)) continue;                 // exact duplicate event/star
+              if ((perRepo[it.repo] || 0) >= perRepoCap) continue; // no more than 2 same repo
+              seenIds.add(it.id);
+              perRepo[it.repo] = (perRepo[it.repo] || 0) + 1;
+
+              const label = icon[it.type] || icon[it.type+'Event'] || it.type;
+              const desc = it.desc ? ` — ${it.desc}` : '';
+              final.push(`- 📅 ${fmt(it.date)} — ${label} [${it.repo}](${it.url})${desc}`);
+
+              if (final.length >= maxItems) break;
             }
 
-            const activityContent = events.length ? events.join('\n') : '- No recent public activity.';
+            const content = final.length ? final.join('\n') : '- No recent public activity.';
 
-            // Replace ACTIVITY section content
-            function replaceBetween(md, tag, newContent) {
-              const re = new RegExp(`(<!--\\s*${tag}:START\\s*-->)([\\s\\S]*?)(<!--\\s*${tag}:END\\s*-->)`, 'i');
-              return md.replace(re, `$1\n${newContent}\n$3`);
-            }
-
-            md = replaceBetween(md, 'ACTIVITY', activityContent);
+            // --- Replace between markers
+            const re = /(<!--\s*ACTIVITY:START\s*-->)([\s\S]*?)(<!--\s*ACTIVITY:END\s*-->)/i;
+            md = md.replace(re, `$1\n${content}\n$3`);
             fs.writeFileSync(readmePath, md);
 
       - name: Commit & push if changed
@@ -105,7 +142,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit -m "chore(readme): update latest activity (no duplicates)"
+            git commit -m "chore(readme): merged latest activity (events + stars), capped per repo"
             git push
           else
             echo "No changes to commit."

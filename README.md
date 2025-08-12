@@ -37,15 +37,6 @@ Currently developing three projects (🔒 private repositories for now — will 
 
 ## 🔄 Latest activity
 <!-- ACTIVITY:START -->
-- 📅 2025-08-12 — 📤 Pushed [MaKSiiMe/MaKSiiMe](https://github.com/MaKSiiMe/MaKSiiMe)
-- 📅 2025-08-11 — 📤 Pushed [MaKSiiMe/MaKSiiMe](https://github.com/MaKSiiMe/MaKSiiMe)
-- 📅 2025-08-11 — 👀 Watched [kmaasrud/awesome-obsidian](https://github.com/kmaasrud/awesome-obsidian)
-- 📅 2025-08-08 — 🆕 Created [MaKSiiMe/AlphaPicks](https://github.com/MaKSiiMe/AlphaPicks)
-- 📅 2025-08-06 — 📤 Pushed [MaKSiiMe/holbertonschool-machine_learning](https://github.com/MaKSiiMe/holbertonschool-machine_learning)
-- 📅 2025-08-06 — 📤 Pushed [MaKSiiMe/Peer_Learning_Day_Spe](https://github.com/MaKSiiMe/Peer_Learning_Day_Spe)
-- 📅 2025-08-06 — 🆕 Created [MaKSiiMe/Peer_Learning_Day_Spe](https://github.com/MaKSiiMe/Peer_Learning_Day_Spe)
-- 📅 2025-08-04 — 📤 Pushed [MaKSiiMe/holbertonschool-machine_learning](https://github.com/MaKSiiMe/holbertonschool-machine_learning)
-- 📅 2025-08-04 — 👀 Watched [zama-ai/fhevm](https://github.com/zama-ai/fhevm)
 <!-- ACTIVITY:END -->
 
 ---
