@@ -1,4 +1,4 @@
-name: Update profile README (latest activity – clean)
+name: Update profile README (latest activity – clean bullets)
 
 on:
   workflow_dispatch:
@@ -57,6 +57,7 @@ jobs:
               StarredEvent: '⭐ Starred'
             };
 
+            // 🔥 for own repos, no bold to keep lines short
             function formatRepo(repoFullName) {
               if (!repoFullName) return '';
               return repoFullName.startsWith(`${username}/`)
@@ -71,17 +72,13 @@ jobs:
               });
             }
 
-            function trunc(s, n=80) {
-              if (!s) return '';
-              const t = s.replace(/\r?\n/g, ' ').trim();
-              return t.length > n ? t.slice(0, n-1) + '…' : t;
-            }
-
+            // Fetch recent events
             const { data: eventsRaw } = await github.rest.activity.listPublicEventsForUser({
               username,
               per_page: 50
             }).catch(() => ({ data: [] }));
 
+            // Fetch recent stars (with starred_at)
             const { data: starsRaw } = await github.rest.activity.listReposStarredByUser({
               username,
               per_page: 50,
@@ -92,8 +89,7 @@ jobs:
               type: e.type,
               repo: e.repo?.name || '',
               url: e.repo?.name ? `https://github.com/${e.repo.name}` : '',
-              date: e.created_at,
-              desc: ''
+              date: e.created_at
             }));
 
             const starItems = (starsRaw || []).map(s => {
@@ -104,20 +100,20 @@ jobs:
                 type: 'StarredEvent',
                 repo: full,
                 url: `https://github.com/${full}`,
-                date: starredAt,
-                desc: trunc(r.description || '', 80)
+                date: starredAt
               };
             });
 
+            // Merge & keep last 30 days if available
             const now = Date.now();
             const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
             let merged = [...eventItems, ...starItems]
               .filter(x => x.repo && x.url && x.date)
               .sort((a,b) => new Date(b.date) - new Date(a.date));
-
             const recent = merged.filter(x => (now - new Date(x.date).getTime()) <= THIRTY_DAYS_MS);
             if (recent.length) merged = recent;
 
+            // Caps & de-dup: 10 max, ≤2 per repo, ≤2 per type, and not same type+repo twice
             const maxItems = 10;
             const capPerRepo = 2;
             const capPerType = 2;
@@ -125,7 +121,7 @@ jobs:
             const perType = {};
             const seenCombos = new Set();
 
-            const out = [];
+            const lines = [];
             for (const it of merged) {
               const comboKey = `${it.type}-${it.repo}`;
               if ((perRepo[it.repo] || 0) >= capPerRepo) continue;
@@ -138,13 +134,13 @@ jobs:
 
               const label = typeIcon[it.type] || it.type.replace('Event','');
               const repoFmt = formatRepo(it.repo);
-              const desc = (it.type === 'StarredEvent' && it.desc) ? ` — ${it.desc}` : '';
-              out.push(`${fmtDate(it.date)} — ${label} [${repoFmt}](${it.url})${desc}`);
+              // No descriptions to avoid wrapping
+              lines.push(`- ${fmtDate(it.date)} — ${label} [${repoFmt}](${it.url})`);
 
-              if (out.length >= maxItems) break;
+              if (lines.length >= maxItems) break;
             }
 
-            const contentBlock = '\n' + out.join('\n') + '\n';
+            const contentBlock = lines.length ? '\n' + lines.join('\n') + '\n' : '\n- No recent public activity.\n';
             const re = /(<!--\s*ACTIVITY:START\s*-->)([\s\S]*?)(<!--\s*ACTIVITY:END\s*-->)/i;
             md = md.replace(re, `$1${contentBlock}$3`);
             fs.writeFileSync(readmePath, md);
@@ -155,7 +151,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit -m "chore(readme): clean latest activity"
+            git commit -m "chore(readme): latest activity (bulleted, no descriptions)"
             git push
           else
             echo "No changes to commit."
