@@ -17,12 +17,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build sections with GitHub API (robust markers)
+      - name: Build sections with GitHub API (clean formatting & robust replacement)
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
-            const path = require('path');
 
             // --- Resolve README filename regardless of casing ---
             const candidates = ['README.md','Readme.md','README.MD','readme.md'];
@@ -34,31 +33,20 @@ jobs:
               core.setFailed('README file not found (tried: ' + candidates.join(', ') + ')');
               process.exit(1);
             }
-
             let md = fs.readFileSync(readmePath, 'utf8');
 
             // --- Helpers for flexible markers ---
-            function findMarkerPositions(tag) {
-              const startRe = new RegExp(`<!--\\s*${tag}\\s*:\\s*START\\s*-->`, 'i');
-              const endRe   = new RegExp(`<!--\\s*${tag}\\s*:\\s*END\\s*-->`, 'i');
-              const startMatch = md.match(startRe);
-              const endMatch   = md.match(endRe);
-              return { startRe, endRe, startMatch, endMatch };
-            }
-
             function ensureSection(tag, title) {
-              let { startRe, endRe, startMatch, endMatch } = findMarkerPositions(tag);
-              if (!startMatch || !endMatch) {
-                // Append a clean section at the end
-                const block = `\\n\\n## ${title}\\n<!-- ${tag}:START -->\\n<!-- ${tag}:END -->\\n`;
-                md += block;
-                // Refresh matches after appending
-                ({ startRe, endRe, startMatch, endMatch } = findMarkerPositions(tag));
+              const startRe = new RegExp(`<!--\s*${tag}\s*:\s*START\s*-->`, 'i');
+              const endRe   = new RegExp(`<!--\s*${tag}\s*:\s*END\s*-->`, 'i');
+              const hasStart = startRe.test(md);
+              const hasEnd   = endRe.test(md);
+              if (!hasStart || !hasEnd) {
+                md += `\n\n## ${title}\n<!-- ${tag}:START -->\n<!-- ${tag}:END -->\n`;
               }
-              return { startRe, endRe, startMatch, endMatch };
+              return { startRe, endRe };
             }
 
-            // Ensure both sections exist (create if missing)
             const act = ensureSection('ACTIVITY', '🔄 Latest activity');
             const star = ensureSection('STARS', '⭐ Recently starred');
 
@@ -66,41 +54,63 @@ jobs:
             function fmtDate(iso) { return iso ? iso.split('T')[0] : ''; }
             const username = process.env.TARGET_USERNAME || context.repo.owner;
 
+            // --- Friendly labels for event types ---
+            const typeIcon = {
+              WatchEvent: '👀 Watched',
+              CreateEvent: '🆕 Created',
+              PushEvent: '📤 Pushed',
+              ForkEvent: '🍴 Forked',
+              IssuesEvent: '🐞 Issue',
+              IssueCommentEvent: '💬 Issue comment',
+              PullRequestEvent: '🔀 PR',
+              PullRequestReviewEvent: '📝 PR review',
+              ReleaseEvent: '🏷️ Release',
+              PublicEvent: '🌐 Public'
+            };
+
             // --- Fetch data ---
-            const { data: events } = await github.rest.activity.listPublicEventsForUser({
+            const { data: eventsRaw } = await github.rest.activity.listPublicEventsForUser({
               username,
-              per_page: 5
+              per_page: 10
             }).catch(() => ({ data: [] }));
 
-            const activity = (events || []).map(e => {
+            const events = (eventsRaw || []).slice(0, 3).map(e => {
               const date = fmtDate(e.created_at);
               const repo = e.repo ? e.repo.name : '';
               const url = repo ? `https://github.com/${repo}` : '';
-              const type = e.type || 'Event';
-              return `- ${date} — **${type}** in [${repo}](${url})`;
-            }).join('\\n') || '- No recent public activity.';
+              const label = typeIcon[e.type] || e.type || 'Event';
+              return `- 📅 ${date} — ${label} [${repo}](${url})`;
+            });
 
-            const { data: stars } = await github.rest.activity.listReposStarredByUser({
+            const { data: starsRaw } = await github.rest.activity.listReposStarredByUser({
               username,
-              per_page: 5
+              per_page: 10
             }).catch(() => ({ data: [] }));
 
-            const starred = (stars || []).map(s => {
+            const stars = (starsRaw || []).slice(0, 3).map(s => {
               const r = s.repo || s;
               const full = r.full_name || (r.owner?.login && r.name ? `${r.owner.login}/${r.name}` : '');
-              const desc = (r.description || '').replace(/\\r?\\n/g, ' ').trim();
-              return `- [${full}](https://github.com/${full}) — ${desc}`;
-            }).join('\\n') || '- No recent stars.';
+              const desc = (r.description || '').replace(/\r?\n/g, ' ').trim();
+              return desc
+                ? `- ⭐ [${full}](https://github.com/${full}) — ${desc}`
+                : `- ⭐ [${full}](https://github.com/${full})`;
+            });
 
-            // --- Replace content between flexible markers ---
-            function replaceBetween(tagObj, newContent) {
-              const startMatch = tagObj.startMatch;
-              const endMatch = tagObj.endMatch;
-              const startIdx = startMatch.index;
-              const endIdx = endMatch.index + endMatch[0].length;
-              const before = md.slice(0, startIdx + startMatch[0].length);
-              const after  = md.slice(endIdx);
-              md = `${before}\\n${newContent}\\n${after}`;
+            const activity = events.length ? events.join('\n') : '- No recent public activity.';
+            const starred  = stars.length ? stars.join('\n') : '- No recent stars.';
+
+            // --- Replace content between markers; re-find markers each time to avoid stale indices ---
+            function replaceBetween(tagRePair, newContent) {
+              const { startRe, endRe } = tagRePair;
+              const startMatch = md.match(startRe);
+              const endMatch = md.match(endRe);
+              if (!startMatch || !endMatch) {
+                core.setFailed('Markers missing at replacement time.');
+                process.exit(1);
+              }
+              const startIdx = startMatch.index + startMatch[0].length;
+              const endIdx = endMatch.index;
+              md = md.slice(0, startIdx) + "\n" + newContent + "\n" + md.slice(endIdx);
             }
 
             replaceBetween(act, activity);
@@ -114,7 +124,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit -m "chore(readme): update activity & stars (automated)"
+            git commit -m "chore(readme): clean activity & stars formatting (robust markers)"
             git push
           else
             echo "No changes to commit."
