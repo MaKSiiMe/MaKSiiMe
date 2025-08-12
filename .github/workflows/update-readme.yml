@@ -23,12 +23,12 @@ jobs:
           script: |
             const fs = require('fs');
 
-            // --- Locate README
+            // Locate README
             const candidates = ['README.md','Readme.md','README.MD','readme.md'];
             const readmePath = candidates.find(p => fs.existsSync(p));
             if (!readmePath) { core.setFailed('README file not found.'); process.exit(1); }
 
-            // --- Ensure ACTIVITY section
+            // Ensure ACTIVITY section
             function ensureSection(tag, title, md) {
               const start = `<!-- ${tag}:START -->`;
               const end   = `<!-- ${tag}:END -->`;
@@ -41,7 +41,6 @@ jobs:
             ensureSection('ACTIVITY', '🔄 Latest activity', md);
             md = fs.readFileSync(readmePath, 'utf8');
 
-            // --- Helpers
             const username = process.env.TARGET_USERNAME || context.repo.owner;
 
             const typeIcon = {
@@ -58,15 +57,13 @@ jobs:
               StarredEvent: '⭐ Starred'
             };
 
-            // Bold + fire for own repos
             function formatRepo(repoFullName) {
               if (!repoFullName) return '';
               return repoFullName.startsWith(`${username}/`)
-                ? `**🔥 ${repoFullName}**`
+                ? `🔥 ${repoFullName}`
                 : repoFullName;
             }
 
-            // Date format
             function fmtDate(iso) {
               return new Date(iso).toLocaleDateString('en-US', {
                 timeZone: 'Europe/Paris',
@@ -74,29 +71,24 @@ jobs:
               });
             }
 
-            // Truncate desc
             function trunc(s, n=80) {
               if (!s) return '';
               const t = s.replace(/\r?\n/g, ' ').trim();
               return t.length > n ? t.slice(0, n-1) + '…' : t;
             }
 
-            // Fetch recent events
             const { data: eventsRaw } = await github.rest.activity.listPublicEventsForUser({
               username,
               per_page: 50
             }).catch(() => ({ data: [] }));
 
-            // Fetch stars
             const { data: starsRaw } = await github.rest.activity.listReposStarredByUser({
               username,
               per_page: 50,
               headers: { accept: 'application/vnd.github.v3.star+json' }
             }).catch(() => ({ data: [] }));
 
-            // Transform events
             const eventItems = (eventsRaw || []).map(e => ({
-              kind: 'event',
               type: e.type,
               repo: e.repo?.name || '',
               url: e.repo?.name ? `https://github.com/${e.repo.name}` : '',
@@ -104,13 +96,11 @@ jobs:
               desc: ''
             }));
 
-            // Transform stars
             const starItems = (starsRaw || []).map(s => {
               const r = s.repo || s;
               const full = r.full_name || '';
               const starredAt = s.starred_at || r.updated_at || r.created_at;
               return {
-                kind: 'star',
                 type: 'StarredEvent',
                 repo: full,
                 url: `https://github.com/${full}`,
@@ -119,7 +109,6 @@ jobs:
               };
             });
 
-            // Merge + filter 30 days
             const now = Date.now();
             const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
             let merged = [...eventItems, ...starItems]
@@ -129,7 +118,6 @@ jobs:
             const recent = merged.filter(x => (now - new Date(x.date).getTime()) <= THIRTY_DAYS_MS);
             if (recent.length) merged = recent;
 
-            // Filter caps
             const maxItems = 10;
             const capPerRepo = 2;
             const capPerType = 2;
@@ -156,11 +144,9 @@ jobs:
               if (out.length >= maxItems) break;
             }
 
-            const content = out.length ? out.join('\n') : '- No recent public activity.';
-
-            // Replace ACTIVITY section
+            const contentBlock = '\n' + out.join('\n') + '\n';
             const re = /(<!--\s*ACTIVITY:START\s*-->)([\s\S]*?)(<!--\s*ACTIVITY:END\s*-->)/i;
-            md = md.replace(re, `$1\n${content}\n$3`);
+            md = md.replace(re, `$1${contentBlock}$3`);
             fs.writeFileSync(readmePath, md);
 
       - name: Commit & push if changed
