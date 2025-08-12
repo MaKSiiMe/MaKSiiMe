@@ -37,16 +37,6 @@ Currently developing three projects (🔒 private repositories for now — will 
 
 ## 🔄 Latest activity
 <!-- ACTIVITY:START -->
-- 📅 2025-08-12 — ⭐ Starred [backend-developers-ltd/ComputeHorde](https://github.com/backend-developers-ltd/ComputeHorde)
-- 📅 2025-08-12 — ⭐ Starred [elizaOS/eliza](https://github.com/elizaOS/eliza) — Autonomous agents for everyone
-- 📅 2025-08-12 — ⭐ Starred [zama-ai/fhevm](https://github.com/zama-ai/fhevm) — FHEVM, a full-stack framework for integrating Fully Homomorphic Encryption (FHE) with blockchain applications
-- 📅 2025-08-12 — ⭐ Starred [lutzroeder/netron](https://github.com/lutzroeder/netron) — Visualizer for neural network, deep learning and machine learning models
-- 📅 2025-08-12 — ⭐ Starred [ManimCommunity/manim](https://github.com/ManimCommunity/manim) — A community-maintained Python framework for creating mathematical animations.
-- 📅 2025-08-12 — ⭐ Starred [Datura-ai/lium-io](https://github.com/Datura-ai/lium-io)
-- 📅 2025-08-12 — ⭐ Starred [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap) — Interactive roadmaps, guides and other educational content to help developers grow in their careers.
-- 📅 2025-08-12 — ⭐ Starred [dstrbtd/DistributedTraining](https://github.com/dstrbtd/DistributedTraining)
-- 📅 2025-08-12 — ⭐ Starred [opensource-together/opensource-together](https://github.com/opensource-together/opensource-together) — La plateforme qui connecte créateurs de projets et développeurs, designers et créatifs pour construire ensemble le futur de l'open source
-- 📅 2025-08-12 — 📤 Pushed [MaKSiiMe/MaKSiiMe](https://github.com/MaKSiiMe/MaKSiiMe)
 <!-- ACTIVITY:END -->
 
 ---

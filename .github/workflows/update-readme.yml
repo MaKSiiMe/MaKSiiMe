@@ -17,7 +17,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build merged activity (events + stars)
+      - name: Build merged activity (events + stars with caps)
         uses: actions/github-script@v7
         with:
           script: |
@@ -56,14 +56,8 @@ jobs:
               PublicEvent: '🌐 Public',
               Starred: '⭐ Starred'
             };
-            const fmt = iso => {
-              if (!iso) return '';
-              const d = new Date(iso);
-              const y = d.getUTCFullYear();
-              const m = String(d.getUTCMonth()+1).padStart(2,'0');
-              const day = String(d.getUTCDate()).padStart(2,'0');
-              return `${y}-${m}-${day}`;
-            };
+            const fmtDate = iso =>
+              new Date(iso).toLocaleDateString('en-US', { timeZone: 'Europe/Paris', month: 'short', day: 'numeric', year: 'numeric' });
 
             // --- Fetch public events (newest first)
             const { data: eventsRaw } = await github.rest.activity.listPublicEventsForUser({
@@ -73,23 +67,23 @@ jobs:
 
             const asEventItems = (eventsRaw || []).map(e => ({
               kind: 'event',
-              id: e.id,                        // unique id from events API
+              id: e.id,
               date: e.created_at,
-              type: e.type,                    // e.g., PushEvent
+              type: e.type,                // e.g., PushEvent
               repo: e.repo?.name || '',
               url: e.repo ? `https://github.com/${e.repo.name}` : '',
               desc: ''
             }));
 
-            // --- Fetch last stars (need starred_at; fall back to updated_at if missing)
-            // Note: github-script uses Octokit which supports the star media type implicitly in most cases.
+            // --- Fetch last stars with starred_at (need special Accept header)
             const { data: starsRaw } = await github.rest.activity.listReposStarredByUser({
               username,
-              per_page: 50
+              per_page: 50,
+              headers: { accept: 'application/vnd.github.v3.star+json' }
             }).catch(() => ({ data: [] }));
 
             const asStarItems = (starsRaw || []).map(s => {
-              const r = s.repo || s; // shape may vary
+              const r = s.repo || s;
               const starredAt = s.starred_at || r.starred_at || r.pushed_at || r.updated_at || r.created_at;
               const full = r.full_name || (r.owner?.login && r.name ? `${r.owner.login}/${r.name}` : '');
               return {
@@ -103,28 +97,33 @@ jobs:
               };
             });
 
-            // --- Merge, sort by date desc
+            // --- Merge & sort by date desc
             const merged = [...asEventItems, ...asStarItems]
               .filter(x => x.repo && x.url && x.date)
               .sort((a,b) => new Date(b.date) - new Date(a.date));
 
-            // --- Build final list:
-            // Rules: max 10 items; ≤ 2 occurrences per repo; dedupe exact items by unique id
+            // --- Build final list with caps: max 10; ≤2 per repo; ≤2 per type; dedupe exact ids
             const maxItems = 10;
-            const perRepoCap = 2;
+            const capPerRepo = 2;
+            const capPerType = 2;
             const seenIds = new Set();
             const perRepo = {};
+            const perType = {};
             const final = [];
 
             for (const it of merged) {
-              if (seenIds.has(it.id)) continue;                 // exact duplicate event/star
-              if ((perRepo[it.repo] || 0) >= perRepoCap) continue; // no more than 2 same repo
+              if (seenIds.has(it.id)) continue;
+              if ((perRepo[it.repo] || 0) >= capPerRepo) continue;
+              const typeKey = it.type; // e.g., 'PushEvent' or 'Starred'
+              if ((perType[typeKey] || 0) >= capPerType) continue;
+
               seenIds.add(it.id);
               perRepo[it.repo] = (perRepo[it.repo] || 0) + 1;
+              perType[typeKey] = (perType[typeKey] || 0) + 1;
 
-              const label = icon[it.type] || icon[it.type+'Event'] || it.type;
+              const label = icon[typeKey] || icon[typeKey+'Event'] || typeKey.replace('Event','');
               const desc = it.desc ? ` — ${it.desc}` : '';
-              final.push(`- 📅 ${fmt(it.date)} — ${label} [${it.repo}](${it.url})${desc}`);
+              final.push(`- 📅 ${fmtDate(it.date)} — ${label} [${it.repo}](${it.url})${desc}`);
 
               if (final.length >= maxItems) break;
             }
@@ -142,7 +141,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit -m "chore(readme): merged latest activity (events + stars), capped per repo"
+            git commit -m "chore(readme): merged latest activity with per-repo & per-type caps"
             git push
           else
             echo "No changes to commit."
