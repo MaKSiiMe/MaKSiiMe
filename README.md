@@ -52,14 +52,14 @@ Currently developing three projects (🔒 private repositories for now — will 
 ## 🔗 Links
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/maxime-truel/" alt="LinkedIn">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" height="30" width="30"/>
+  <a href="https://www.linkedin.com/in/maxime-truel/">
+    <img src="https://cdn.simpleicons.org/linkedin/white" alt="LinkedIn" height="30"/>
   </a>
-  <a href="https://x.com/0xMaksiime" alt="X">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" height="30" width="30"/>
+  <a href="https://x.com/0xMaksiime">
+    <img src="https://cdn.simpleicons.org/x/white" alt="X" height="30"/>
   </a>
-  <a href="mailto:9865@holbertonstudents.com" alt="Email">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="Email" height="30" width="30"/>
+  <a href="mailto:9865@holbertonstudents.com">
+    <img src="https://cdn.simpleicons.org/gmail/white" alt="Email" height="30"/>
   </a>
 </p>
 
@@ -72,6 +72,3 @@ Currently developing three projects (🔒 private repositories for now — will 
 <a href="https://github.com/MaKSiiMe">
   <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MaKSiiMe&layout=compact&theme=github_dark&hide_border=true" />
 </a>
-
-## 🏆 Trophies
-![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=MaKSiiMe&theme=darkhub&no-frame=true&no-bg=true&margin-w=10&margin-h=10&column=6)
