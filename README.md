@@ -37,6 +37,14 @@ Currently developing three projects (🔒 private repositories for now — will 
 
 ## 🔄 Latest activity
 <!-- ACTIVITY:START -->
+- 📅 2025-08-12 — 📤 Pushed [MaKSiiMe/MaKSiiMe](https://github.com/MaKSiiMe/MaKSiiMe)
+- 📅 2025-08-12 — 📤 Pushed [MaKSiiMe/MaKSiiMe](https://github.com/MaKSiiMe/MaKSiiMe)
+- 📅 2025-08-11 — 👀 Watched [kmaasrud/awesome-obsidian](https://github.com/kmaasrud/awesome-obsidian)
+- 📅 2025-08-08 — 🆕 Created [MaKSiiMe/AlphaPicks](https://github.com/MaKSiiMe/AlphaPicks)
+- 📅 2025-08-08 — 🆕 Created [MaKSiiMe/AlphaPicks](https://github.com/MaKSiiMe/AlphaPicks)
+- 📅 2025-08-04 — 👀 Watched [zama-ai/fhevm](https://github.com/zama-ai/fhevm)
+- 📅 2025-07-11 — ⭐ Starred [hugo-chilemme/memoriz](https://github.com/hugo-chilemme/memoriz)
+- 📅 2025-05-14 — ⭐ Starred [Zie619/n8n-workflows](https://github.com/Zie619/n8n-workflows) — all of the workflows of n8n i could find (also from the site itself)
 <!-- ACTIVITY:END -->
 
 ## ⭐ Recently starred
