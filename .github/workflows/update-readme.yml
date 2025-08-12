@@ -17,44 +17,44 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build sections with GitHub API (clean formatting & robust replacement)
+      - name: Build sections with GitHub API (robust markers & clean formatting)
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
 
-            // --- Resolve README filename regardless of casing ---
+            // Detect README file regardless of casing
             const candidates = ['README.md','Readme.md','README.MD','readme.md'];
-            let readmePath = null;
-            for (const p of candidates) {
-              if (fs.existsSync(p)) { readmePath = p; break; }
-            }
+            let readmePath = candidates.find(p => fs.existsSync(p));
             if (!readmePath) {
-              core.setFailed('README file not found (tried: ' + candidates.join(', ') + ')');
+              core.setFailed('README file not found.');
               process.exit(1);
             }
-            let md = fs.readFileSync(readmePath, 'utf8');
 
-            // --- Helpers for flexible markers ---
-            function ensureSection(tag, title) {
-              const startRe = new RegExp(`<!--\s*${tag}\s*:\s*START\s*-->`, 'i');
-              const endRe   = new RegExp(`<!--\s*${tag}\s*:\s*END\s*-->`, 'i');
-              const hasStart = startRe.test(md);
-              const hasEnd   = endRe.test(md);
+            // Helper to ensure section exists exactly matching regex
+            function ensureSection(tag, title, md) {
+              const startMarker = `<!-- ${tag}:START -->`;
+              const endMarker = `<!-- ${tag}:END -->`;
+              const hasStart = md.toLowerCase().includes(startMarker.toLowerCase());
+              const hasEnd = md.toLowerCase().includes(endMarker.toLowerCase());
               if (!hasStart || !hasEnd) {
-                md += `\n\n## ${title}\n<!-- ${tag}:START -->\n<!-- ${tag}:END -->\n`;
+                md += `\n\n## ${title}\n${startMarker}\n${endMarker}\n`;
+                fs.writeFileSync(readmePath, md);
               }
-              return { startRe, endRe };
             }
 
-            const act = ensureSection('ACTIVITY', '🔄 Latest activity');
-            const star = ensureSection('STARS', '⭐ Recently starred');
+            // Step 1: Ensure sections exist in README
+            let md = fs.readFileSync(readmePath, 'utf8');
+            ensureSection('ACTIVITY', '🔄 Latest activity', md);
+            md = fs.readFileSync(readmePath, 'utf8');
+            ensureSection('STARS', '⭐ Recently starred', md);
+            md = fs.readFileSync(readmePath, 'utf8'); // Reload after any changes
 
-            // --- Utilities ---
+            // Utilities
             function fmtDate(iso) { return iso ? iso.split('T')[0] : ''; }
             const username = process.env.TARGET_USERNAME || context.repo.owner;
 
-            // --- Friendly labels for event types ---
+            // Friendly labels for events
             const typeIcon = {
               WatchEvent: '👀 Watched',
               CreateEvent: '🆕 Created',
@@ -68,7 +68,7 @@ jobs:
               PublicEvent: '🌐 Public'
             };
 
-            // --- Fetch data ---
+            // Fetch last 3 events
             const { data: eventsRaw } = await github.rest.activity.listPublicEventsForUser({
               username,
               per_page: 10
@@ -82,6 +82,7 @@ jobs:
               return `- 📅 ${date} — ${label} [${repo}](${url})`;
             });
 
+            // Fetch last 3 starred repos
             const { data: starsRaw } = await github.rest.activity.listReposStarredByUser({
               username,
               per_page: 10
@@ -96,25 +97,20 @@ jobs:
                 : `- ⭐ [${full}](https://github.com/${full})`;
             });
 
-            const activity = events.length ? events.join('\n') : '- No recent public activity.';
-            const starred  = stars.length ? stars.join('\n') : '- No recent stars.';
+            const activityContent = events.length ? events.join('\n') : '- No recent public activity.';
+            const starsContent = stars.length ? stars.join('\n') : '- No recent stars.';
 
-            // --- Replace content between markers; re-find markers each time to avoid stale indices ---
-            function replaceBetween(tagRePair, newContent) {
-              const { startRe, endRe } = tagRePair;
-              const startMatch = md.match(startRe);
-              const endMatch = md.match(endRe);
-              if (!startMatch || !endMatch) {
-                core.setFailed('Markers missing at replacement time.');
-                process.exit(1);
-              }
-              const startIdx = startMatch.index + startMatch[0].length;
-              const endIdx = endMatch.index;
-              md = md.slice(0, startIdx) + "\n" + newContent + "\n" + md.slice(endIdx);
+            // Replace content between markers
+            function replaceBetween(md, tag, newContent) {
+              const startMarker = `<!-- ${tag}:START -->`;
+              const endMarker = `<!-- ${tag}:END -->`;
+              const startIdx = md.indexOf(startMarker) + startMarker.length;
+              const endIdx = md.indexOf(endMarker);
+              return md.slice(0, startIdx) + '\n' + newContent + '\n' + md.slice(endIdx);
             }
 
-            replaceBetween(act, activity);
-            replaceBetween(star, starred);
+            md = replaceBetween(md, 'ACTIVITY', activityContent);
+            md = replaceBetween(md, 'STARS', starsContent);
 
             fs.writeFileSync(readmePath, md);
 
@@ -124,7 +120,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit -m "chore(readme): clean activity & stars formatting (robust markers)"
+            git commit -m "chore(readme): update activity & stars (robust formatting)"
             git push
           else
             echo "No changes to commit."
