@@ -37,14 +37,14 @@ Currently developing three projects (🔒 private repositories for now — will 
 
 ## 🔄 Latest activity
 <!-- ACTIVITY:START -->
-- 📅 Aug 12, 2025 — 📤 Pushed [MaKSiiMe/MaKSiiMe](https://github.com/MaKSiiMe/MaKSiiMe)
-- 📅 Aug 12, 2025 — 📤 Pushed [MaKSiiMe/MaKSiiMe](https://github.com/MaKSiiMe/MaKSiiMe)
-- 📅 Aug 11, 2025 — 👀 Watched [kmaasrud/awesome-obsidian](https://github.com/kmaasrud/awesome-obsidian)
-- 📅 Aug 8, 2025 — 🆕 Created [MaKSiiMe/AlphaPicks](https://github.com/MaKSiiMe/AlphaPicks)
-- 📅 Aug 8, 2025 — 🆕 Created [MaKSiiMe/AlphaPicks](https://github.com/MaKSiiMe/AlphaPicks)
-- 📅 Aug 4, 2025 — 👀 Watched [zama-ai/fhevm](https://github.com/zama-ai/fhevm)
-- 📅 Aug 4, 2025 — ⭐ Starred [zama-ai/fhevm](https://github.com/zama-ai/fhevm) — FHEVM, a full-stack framework for integrating Fully Homomorphic Encryption (FHE) with blockchain applications
-- 📅 Jul 29, 2025 — ⭐ Starred [roboflow/supervision](https://github.com/roboflow/supervision) — We write your reusable computer vision tools. 💜
+📅 Aug 12, 2025 — 📤 Pushed [MaKSiiMe/MaKSiiMe](https://github.com/MaKSiiMe/MaKSiiMe)
+📅 Aug 11, 2025 — 👀 Watched [kmaasrud/awesome-obsidian](https://github.com/kmaasrud/awesome-obsidian)
+📅 Aug 8, 2025 — 🆕 Created [MaKSiiMe/AlphaPicks](https://github.com/MaKSiiMe/AlphaPicks)
+📅 Aug 6, 2025 — 📤 Pushed [MaKSiiMe/holbertonschool-machine_learning](https://github.com/MaKSiiMe/holbertonschool-machine_learning)
+📅 Aug 6, 2025 — 🆕 Created [MaKSiiMe/Peer_Learning_Day_Spe](https://github.com/MaKSiiMe/Peer_Learning_Day_Spe)
+📅 Aug 4, 2025 — 👀 Watched [zama-ai/fhevm](https://github.com/zama-ai/fhevm)
+📅 Jul 11, 2025 — ⭐ Starred [hugo-chilemme/memoriz](https://github.com/hugo-chilemme/memoriz)
+📅 May 14, 2025 — ⭐ Starred [Zie619/n8n-workflows](https://github.com/Zie619/n8n-workflows) — all of the workflows of n8n i could find (also from the site itself)
 <!-- ACTIVITY:END -->
 
 ---
