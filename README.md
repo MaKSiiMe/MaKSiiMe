@@ -50,12 +50,17 @@ Currently developing three projects (🔒 private repositories for now — will 
 ---
 
 ## 🔗 Links
-[![Portfolio](https://img.shields.io/badge/Portfolio-WIP-blue?style=flat&logo=vercel)](#) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Maxime%20Truel-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/maxime-truel/) [![X](https://img.shields.io/badge/Twitter-@0xMaksiime-black?style=flat&logo=x)](https://x.com/0xMaksiime) [![Email](https://img.shields.io/badge/Email-9865%40holbertonstudents.com-red?style=flat&logo=gmail)](mailto:9865@holbertonstudents.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-WIP-orange?style=flat-square&logo=vercel&logoColor=white)](#)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Maxime%20Truel-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/maxime-truel/)
+[![Twitter](https://img.shields.io/badge/Twitter-@0xMaksiime-1DA1F2?style=flat-square&logo=twitter&logoColor=white)](https://x.com/0xMaksiime)
+[![Email](https://img.shields.io/badge/Email-9865%40holbertonstudents.com-red?style=flat-square&logo=gmail&logoColor=white)](mailto:9865@holbertonstudents.com)
 
 ---
 
 ## 📊 Widgets
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=MaKSiiMe&show_icons=true&hide_title=true&theme=github_dark" alt="GitHub Stats" height="165"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MaKSiiMe&layout=compact&theme=github_dark" alt="Top Languages" height="165"/>
-</p>
+<a href="https://github.com/MaKSiiMe">
+  <img height="160" src="https://github-readme-stats.vercel.app/api?username=MaKSiiMe&show_icons=true&hide_title=true&theme=github_dark&hide_border=true" />
+</a>
+<a href="https://github.com/MaKSiiMe">
+  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MaKSiiMe&layout=compact&theme=github_dark&hide_border=true" />
+</a>
