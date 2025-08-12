@@ -37,22 +37,7 @@ Currently developing three projects (🔒 private repositories for now — will 
 
 ## 🔄 Latest activity
 <!-- ACTIVITY:START -->
-<!-- ACTIVITY:START -->
-
-## ⭐ Recently starred
-<!-- STARS:START -->
-<!-- STARS:END -->
-
----
-
-## 🔗 Links
-- Website/Portfolio: WIP
-- LinkedIn: https://www.linkedin.com/in/maxime-truel/
-- X (Twitter): https://x.com/0xMaksiime
-- Email: 9865@holbertonstudents.com
-
----
-
-## 📊 Widgets
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=MaKSiiMe&show_icons=true&hide_title=true)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=MaKSiiMe&layout=compact)
+- 📅 2025-08-11 — 👀 Watched [kmaasrud/awesome-obsidian](https://github.com/kmaasrud/awesome-obsidian)
+- 📅 2025-08-08 — 🆕 Created [MaKSiiMe/AlphaPicks](https://github.com/MaKSiiMe/AlphaPicks)
+- 📅 2025-08-08 — 🆕 Created [MaKSiiMe/AlphaPicks](https://github.com/MaKSiiMe/AlphaPicks)
+<!-- ACTIVITY:END -->
