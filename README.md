@@ -1,6 +1,6 @@
 # Maxime Truel — AI/ML × Web3
 
-> Year 2 student @[Holberton School](https://www.holbertonschool.fr/), specializing in **Artificial Intelligence & Machine Learning**. Currently seeking a **3–6 month internship** starting May/June 2026.  
+> Year 2 student @ [Holberton School](https://www.holbertonschool.fr/), specializing in **Artificial Intelligence & Machine Learning**. Currently seeking a **3–6 month internship** starting May/June 2026.  
 > Passionate about **Web3** and **innovative finance** — exploring unique financial products for everyday people, investment research, and the integration of **automation**, **AI**, and **blockchain**.
 
 🎓 **Degree in progress**: International Holberton School diploma + [RNCP Level 6 — Application Developer Designer](https://www.francecompetences.fr/recherche/rncp/37873/) (Bachelor’s degree equivalent — Bac+3/4, recognized by the French state).
@@ -33,15 +33,16 @@ Currently developing three projects (🔒 private repositories for now — will 
   - **Bittensor Dashboard** — In MVP conception/brainstorming phase.
   - **Bitcoin Indicator Aggregator** — Defining and selecting key indicators to combine into a single 0–100 signal.
 
-
 ---
 
 ## 🔄 Latest activity
 <!-- ACTIVITY:START -->
+
 <!-- ACTIVITY:END -->
 
 ## ⭐ Recently starred
 <!-- STARS:START -->
+
 <!-- STARS:END -->
 
 ---
