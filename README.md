@@ -50,13 +50,12 @@ Currently developing three projects (🔒 private repositories for now — will 
 ---
 
 ## 🔗 Links
-- Website/Portfolio: WIP
-- LinkedIn: https://www.linkedin.com/in/maxime-truel/
-- X (Twitter): https://x.com/0xMaksiime
-- Email: 9865@holbertonstudents.com
+[![Portfolio](https://img.shields.io/badge/Portfolio-WIP-blue?style=flat&logo=vercel)](#) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Maxime%20Truel-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/maxime-truel/) [![X](https://img.shields.io/badge/Twitter-@0xMaksiime-black?style=flat&logo=x)](https://x.com/0xMaksiime) [![Email](https://img.shields.io/badge/Email-9865%40holbertonstudents.com-red?style=flat&logo=gmail)](mailto:9865@holbertonstudents.com)
 
 ---
 
 ## 📊 Widgets
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=MaKSiiMe&show_icons=true&hide_title=true)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=MaKSiiMe&layout=compact)
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=MaKSiiMe&show_icons=true&hide_title=true&theme=github_dark" alt="GitHub Stats" height="165"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MaKSiiMe&layout=compact&theme=github_dark" alt="Top Languages" height="165"/>
+</p>
