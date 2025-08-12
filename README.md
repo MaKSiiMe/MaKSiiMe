@@ -36,9 +36,7 @@ Currently developing three projects (🔒 private repositories for now — will 
 ---
 
 ## 🔄 Latest activity
-<!-- ACTIVITY:START -->
-
-<!-- ACTIVITY:END -->
+<!-- ACTIVITY:START -->\n- 2025-08-11 — **WatchEvent** in [kmaasrud/awesome-obsidian](http\n- [zama-ai/fhevm](https://github.com/zama-ai/fhevm) — FHEVM, a full-stack framework for integrating Fully Homomorphic Encryption (FHE) with blockchain applications\n- [roboflow/supervision](https://github.com/roboflow/supervision) — We write your reusable computer vision tools. 💜\n- [opensource-together/opensource-together](https://github.com/opensource-together/opensource-together) — La plateforme qui connecte créateurs de projets et développeurs, designers et créatifs pour construire ensemble le futur de l'open source\n- [hugo-chilemme/memoriz](https://github.com/hugo-chilemme/memoriz) — \n- [ManimCommunity/manim](https://github.com/ManimCommunity/manim) — A community-maintained Python framework for creating mathematical animations.\nrud/awesome-obsidian)\n- 2025-08-08 — **CreateEvent** in [MaKSiiMe/AlphaPicks](https://github.com/MaKSiiMe/AlphaPicks)\n- 2025-08-08 — **CreateEvent** in [MaKSiiMe/AlphaPicks](https://github.com/MaKSiiMe/AlphaPicks)\n- 2025-08-06 — **PushEvent** in [MaKSiiMe/holbertonschool-machine_learning](https://github.com/MaKSiiMe/holbertonschool-machine_learning)\n- 2025-08-06 — **PushEvent** in [MaKSiiMe/Peer_Learning_Day_Spe](https://github.com/MaKSiiMe/Peer_Learning_Day_Spe)\n
 
 ## ⭐ Recently starred
 <!-- STARS:START -->
