@@ -1,4 +1,4 @@
-name: Update profile README (activity + stars merged)
+name: Update profile README (activity only)
 
 on:
   workflow_dispatch:
@@ -17,7 +17,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build merged activity section
+      - name: Build activity section with GitHub API
         uses: actions/github-script@v7
         with:
           script: |
@@ -45,10 +45,11 @@ jobs:
             ensureSection('ACTIVITY', '🔄 Latest activity', md);
             md = fs.readFileSync(readmePath, 'utf8');
 
-            // Helpers
+            // Format date
             function fmtDate(iso) { return iso ? iso.split('T')[0] : ''; }
             const username = process.env.TARGET_USERNAME || context.repo.owner;
 
+            // Icons for event types
             const typeIcon = {
               WatchEvent: '👀 Watched',
               CreateEvent: '🆕 Created',
@@ -60,69 +61,36 @@ jobs:
               PullRequestReviewEvent: '📝 PR review',
               ReleaseEvent: '🏷️ Release',
               PublicEvent: '🌐 Public',
-              Starred: '⭐ Starred'
+              StarEvent: '⭐ Starred'
             };
 
-            // Fetch raw events
+            // Fetch last events
             const { data: eventsRaw } = await github.rest.activity.listPublicEventsForUser({
               username,
               per_page: 30
             }).catch(() => ({ data: [] }));
 
-            const events = (eventsRaw || []).map(e => ({
-              date: e.created_at,
-              repo: e.repo?.name || '',
-              url: e.repo ? `https://github.com/${e.repo.name}` : '',
-              type: e.type.replace('Event',''),
-              desc: ''
-            }));
+            // Transform + deduplicate
+            const seen = new Set();
+            const events = [];
 
-            // Fetch raw stars
-            const { data: starsRaw } = await github.rest.activity.listReposStarredByUser({
-              username,
-              per_page: 30
-            }).catch(() => ({ data: [] }));
-
-            const stars = (starsRaw || []).map(s => {
-              const r = s.repo || s;
-              return {
-                date: s.starred_at || r.created_at,
-                repo: r.full_name || '',
-                url: `https://github.com/${r.full_name}`,
-                type: 'Starred',
-                desc: (r.description || '').replace(/\r?\n/g, ' ').trim()
-              };
-            });
-
-            // Merge & sort
-            const merged = [...events, ...stars].sort((a,b) => new Date(b.date) - new Date(a.date));
-
-            // Apply filters: max 10 total, max 2 per repo, max 2 per type
-            const maxItems = 10;
-            const maxPerRepo = 2;
-            const maxPerType = 2;
-            const countPerRepo = {};
-            const countPerType = {};
-            const finalList = [];
-
-            for (const item of merged) {
-              if (!item.repo || !item.url) continue;
-              if ((countPerRepo[item.repo] || 0) >= maxPerRepo) continue;
-              if ((countPerType[item.type] || 0) >= maxPerType) continue;
-
-              countPerRepo[item.repo] = (countPerRepo[item.repo] || 0) + 1;
-              countPerType[item.type] = (countPerType[item.type] || 0) + 1;
-
-              const label = typeIcon[item.type+'Event'] || typeIcon[item.type] || item.type;
-              const descPart = item.desc ? ` — ${item.desc}` : '';
-              finalList.push(`- 📅 ${fmtDate(item.date)} — ${label} [${item.repo}](${item.url})${descPart}`);
-
-              if (finalList.length >= maxItems) break;
+            for (const e of eventsRaw || []) {
+              const date = fmtDate(e.created_at);
+              const repo = e.repo ? e.repo.name : '';
+              const url = repo ? `https://github.com/${repo}` : '';
+              const label = typeIcon[e.type] || e.type || 'Event';
+              const line = `- 📅 ${date} — ${label} [${repo}](${url})`;
+              const key = `${date}-${label}-${repo}`;
+              if (!seen.has(key)) {
+                seen.add(key);
+                events.push(line);
+              }
+              if (events.length >= 10) break;
             }
 
-            const activityContent = finalList.length ? finalList.join('\n') : '- No recent activity.';
+            const activityContent = events.length ? events.join('\n') : '- No recent public activity.';
 
-            // Replace between markers
+            // Replace ACTIVITY section content
             function replaceBetween(md, tag, newContent) {
               const re = new RegExp(`(<!--\\s*${tag}:START\\s*-->)([\\s\\S]*?)(<!--\\s*${tag}:END\\s*-->)`, 'i');
               return md.replace(re, `$1\n${newContent}\n$3`);
@@ -137,7 +105,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit -m "chore(readme): update merged activity (events + stars)"
+            git commit -m "chore(readme): update latest activity (no duplicates)"
             git push
           else
             echo "No changes to commit."

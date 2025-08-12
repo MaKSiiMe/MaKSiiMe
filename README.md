@@ -47,10 +47,6 @@ Currently developing three projects (🔒 private repositories for now — will 
 - 📅 2025-05-14 — ⭐ Starred [Zie619/n8n-workflows](https://github.com/Zie619/n8n-workflows) — all of the workflows of n8n i could find (also from the site itself)
 <!-- ACTIVITY:END -->
 
-## ⭐ Recently starred
-<!-- STARS:START -->
-<!-- STARS:END -->
-
 ---
 
 ## 🔗 Links
