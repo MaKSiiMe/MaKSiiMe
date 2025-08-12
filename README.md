@@ -37,6 +37,14 @@ Currently developing three projects (🔒 private repositories for now — will 
 
 ## 🔄 Latest activity
 <!-- ACTIVITY:START -->
+- 📅 Aug 12, 2025 — 📤 Pushed [MaKSiiMe/MaKSiiMe](https://github.com/MaKSiiMe/MaKSiiMe)
+- 📅 Aug 12, 2025 — 📤 Pushed [MaKSiiMe/MaKSiiMe](https://github.com/MaKSiiMe/MaKSiiMe)
+- 📅 Aug 11, 2025 — 👀 Watched [kmaasrud/awesome-obsidian](https://github.com/kmaasrud/awesome-obsidian)
+- 📅 Aug 8, 2025 — 🆕 Created [MaKSiiMe/AlphaPicks](https://github.com/MaKSiiMe/AlphaPicks)
+- 📅 Aug 8, 2025 — 🆕 Created [MaKSiiMe/AlphaPicks](https://github.com/MaKSiiMe/AlphaPicks)
+- 📅 Aug 4, 2025 — 👀 Watched [zama-ai/fhevm](https://github.com/zama-ai/fhevm)
+- 📅 Aug 4, 2025 — ⭐ Starred [zama-ai/fhevm](https://github.com/zama-ai/fhevm) — FHEVM, a full-stack framework for integrating Fully Homomorphic Encryption (FHE) with blockchain applications
+- 📅 Jul 29, 2025 — ⭐ Starred [roboflow/supervision](https://github.com/roboflow/supervision) — We write your reusable computer vision tools. 💜
 <!-- ACTIVITY:END -->
 
 ---
