@@ -50,25 +50,26 @@ Currently developing three projects (🔒 private repositories for now — will 
 ---
 
 ## 🔗 Links
-
 <p align="center">
-  <a href="https://www.linkedin.com/in/maxime-truel/">
-    <img src="https://cdn.simpleicons.org/linkedin/white" alt="LinkedIn" height="30" style="text-decoration:none;"/>
+  <a href="https://www.linkedin.com/in/maxime-truel/" target="_blank" rel="noopener noreferrer">
+    <img src="https://skillicons.dev/icons?i=linkedin" height="34" alt="LinkedIn">
   </a>
-  <a href="https://x.com/0xMaksiime">
-    <img src="https://cdn.simpleicons.org/x/white" alt="X" height="30" style="text-decoration:none;"/>
+  &nbsp;&nbsp;
+  <a href="https://x.com/0xMaksiime" target="_blank" rel="noopener noreferrer">
+    <img src="https://cdn.simpleicons.org/x/FFFFFF" height="26" alt="X"
+         style="background:#111;border-radius:6px;padding:4px;display:inline-block;">
   </a>
+  &nbsp;&nbsp;
   <a href="mailto:9865@holbertonstudents.com">
-    <img src="https://cdn.simpleicons.org/gmail/white" alt="Email" height="30" style="text-decoration:none;"/>
+    <img src="https://skillicons.dev/icons?i=gmail" height="34" alt="Email">
   </a>
 </p>
 
 ---
 
 ## 📊 Widgets
-<a href="https://github.com/MaKSiiMe">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=MaKSiiMe&show_icons=true&hide_title=true&theme=github_dark&hide_border=true" style="text-decoration:none;"/>
-</a>
-<a href="https://github.com/MaKSiiMe">
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MaKSiiMe&layout=compact&theme=github_dark&hide_border=true" style="text-decoration:none;"/>
-</a>
+<p align="center">
+  <img height="160" src="https://github-readme-stats.vercel.app/api?username=MaKSiiMe&show_icons=true&hide_title=true&theme=github_dark&hide_border=true" alt="Stats">
+  &nbsp;&nbsp;
+  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MaKSiiMe&layout=compact&theme=github_dark&hide_border=true" alt="Top languages">
+</p>
