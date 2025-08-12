@@ -53,13 +53,13 @@ Currently developing three projects (🔒 private repositories for now — will 
 
 <p align="center">
   <a href="https://www.linkedin.com/in/maxime-truel/">
-    <img src="https://cdn.simpleicons.org/linkedin/white" alt="LinkedIn" height="30"/>
+    <img src="https://cdn.simpleicons.org/linkedin/white" alt="LinkedIn" height="30" style="text-decoration:none;"/>
   </a>
   <a href="https://x.com/0xMaksiime">
-    <img src="https://cdn.simpleicons.org/x/white" alt="X" height="30"/>
+    <img src="https://cdn.simpleicons.org/x/white" alt="X" height="30" style="text-decoration:none;"/>
   </a>
   <a href="mailto:9865@holbertonstudents.com">
-    <img src="https://cdn.simpleicons.org/gmail/white" alt="Email" height="30"/>
+    <img src="https://cdn.simpleicons.org/gmail/white" alt="Email" height="30" style="text-decoration:none;"/>
   </a>
 </p>
 
@@ -67,8 +67,8 @@ Currently developing three projects (🔒 private repositories for now — will 
 
 ## 📊 Widgets
 <a href="https://github.com/MaKSiiMe">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=MaKSiiMe&show_icons=true&hide_title=true&theme=github_dark&hide_border=true" />
+  <img height="160" src="https://github-readme-stats.vercel.app/api?username=MaKSiiMe&show_icons=true&hide_title=true&theme=github_dark&hide_border=true" style="text-decoration:none;"/>
 </a>
 <a href="https://github.com/MaKSiiMe">
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MaKSiiMe&layout=compact&theme=github_dark&hide_border=true" />
+  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MaKSiiMe&layout=compact&theme=github_dark&hide_border=true" style="text-decoration:none;"/>
 </a>
