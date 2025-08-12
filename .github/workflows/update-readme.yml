@@ -1,4 +1,4 @@
-name: Update profile README (latest activity – enhanced)
+name: Update profile README (latest activity – clean)
 
 on:
   workflow_dispatch:
@@ -17,18 +17,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build enhanced latest activity
+      - name: Build clean latest activity
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
 
-            // --- Locate README (any casing)
+            // --- Locate README
             const candidates = ['README.md','Readme.md','README.MD','readme.md'];
             const readmePath = candidates.find(p => fs.existsSync(p));
             if (!readmePath) { core.setFailed('README file not found.'); process.exit(1); }
 
-            // --- Ensure ACTIVITY section exists (exact markers)
+            // --- Ensure ACTIVITY section
             function ensureSection(tag, title, md) {
               const start = `<!-- ${tag}:START -->`;
               const end   = `<!-- ${tag}:END -->`;
@@ -58,15 +58,6 @@ jobs:
               StarredEvent: '⭐ Starred'
             };
 
-            // Domain emoji from repo name
-            function domainEmoji(repoFullName = '') {
-              const r = repoFullName.toLowerCase();
-              if (/(ml|machine[_-]?learning|pytorch|gymnasium|torch|ai|manim)/.test(r)) return '🧠';
-              if (/(web3|solidity|hardhat|foundry|wallet|eth|ethereum|bittensor|fhevm)/.test(r)) return '⛓️';
-              if (/(data|analytics|indicator|stats)/.test(r)) return '📊';
-              return '📁';
-            }
-
             // Bold + fire for own repos
             function formatRepo(repoFullName) {
               if (!repoFullName) return '';
@@ -75,7 +66,7 @@ jobs:
                 : repoFullName;
             }
 
-            // Date format in Paris time, English output
+            // Date format
             function fmtDate(iso) {
               return new Date(iso).toLocaleDateString('en-US', {
                 timeZone: 'Europe/Paris',
@@ -83,20 +74,20 @@ jobs:
               });
             }
 
-            // Truncate text to n chars
+            // Truncate desc
             function trunc(s, n=80) {
               if (!s) return '';
               const t = s.replace(/\r?\n/g, ' ').trim();
               return t.length > n ? t.slice(0, n-1) + '…' : t;
             }
 
-            // --- Fetch recent public events
+            // Fetch recent events
             const { data: eventsRaw } = await github.rest.activity.listPublicEventsForUser({
               username,
               per_page: 50
             }).catch(() => ({ data: [] }));
 
-            // --- Fetch stars with starred_at timestamps
+            // Fetch stars
             const { data: starsRaw } = await github.rest.activity.listReposStarredByUser({
               username,
               per_page: 50,
@@ -104,41 +95,31 @@ jobs:
             }).catch(() => ({ data: [] }));
 
             // Transform events
-            const eventItems = (eventsRaw || []).map(e => {
-              const repo = e.repo?.name || '';
-              // For pushes, try to link the most recent commit
-              let url = repo ? `https://github.com/${repo}` : '';
-              if (e.type === 'PushEvent' && e.payload?.commits?.length && repo) {
-                const last = e.payload.commits[e.payload.commits.length - 1];
-                const sha = (last && last.sha) ? last.sha : null;
-                if (sha) url = `https://github.com/${repo}/commit/${sha}`;
-              }
-              return {
-                kind: 'event',
-                type: e.type,
-                repo,
-                url,
-                date: e.created_at,
-                desc: '',
-              };
-            });
+            const eventItems = (eventsRaw || []).map(e => ({
+              kind: 'event',
+              type: e.type,
+              repo: e.repo?.name || '',
+              url: e.repo?.name ? `https://github.com/${e.repo.name}` : '',
+              date: e.created_at,
+              desc: ''
+            }));
 
             // Transform stars
             const starItems = (starsRaw || []).map(s => {
               const r = s.repo || s;
-              const full = r.full_name || (r.owner?.login && r.name ? `${r.owner.login}/${r.name}` : '');
-              const starredAt = s.starred_at || r.starred_at || r.pushed_at || r.updated_at || r.created_at;
+              const full = r.full_name || '';
+              const starredAt = s.starred_at || r.updated_at || r.created_at;
               return {
                 kind: 'star',
                 type: 'StarredEvent',
                 repo: full,
-                url: full ? `https://github.com/${full}` : '',
+                url: `https://github.com/${full}`,
                 date: starredAt,
-                desc: trunc(r.description || '', 80),
+                desc: trunc(r.description || '', 80)
               };
             });
 
-            // Merge, filter by date window (30 days), sort desc
+            // Merge + filter 30 days
             const now = Date.now();
             const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
             let merged = [...eventItems, ...starItems]
@@ -146,15 +127,15 @@ jobs:
               .sort((a,b) => new Date(b.date) - new Date(a.date));
 
             const recent = merged.filter(x => (now - new Date(x.date).getTime()) <= THIRTY_DAYS_MS);
-            if (recent.length) merged = recent; // prefer last 30 days; else keep general latest
+            if (recent.length) merged = recent;
 
-            // Build final list with caps/filters
+            // Filter caps
             const maxItems = 10;
             const capPerRepo = 2;
             const capPerType = 2;
             const perRepo = {};
             const perType = {};
-            const seenCombos = new Set(); // avoid same type+repo twice in the list
+            const seenCombos = new Set();
 
             const out = [];
             for (const it of merged) {
@@ -168,17 +149,16 @@ jobs:
               seenCombos.add(comboKey);
 
               const label = typeIcon[it.type] || it.type.replace('Event','');
-              const dom = domainEmoji(it.repo);
               const repoFmt = formatRepo(it.repo);
               const desc = (it.type === 'StarredEvent' && it.desc) ? ` — ${it.desc}` : '';
-              out.push(`- 📅 ${fmtDate(it.date)} — ${label} ${dom} [${repoFmt}](${it.url})${desc}`);
+              out.push(`${fmtDate(it.date)} — ${label} [${repoFmt}](${it.url})${desc}`);
 
               if (out.length >= maxItems) break;
             }
 
             const content = out.length ? out.join('\n') : '- No recent public activity.';
 
-            // Replace inside ACTIVITY markers
+            // Replace ACTIVITY section
             const re = /(<!--\s*ACTIVITY:START\s*-->)([\s\S]*?)(<!--\s*ACTIVITY:END\s*-->)/i;
             md = md.replace(re, `$1\n${content}\n$3`);
             fs.writeFileSync(readmePath, md);
@@ -189,7 +169,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit -m "chore(readme): enhanced latest activity (events+stars, caps, domain emojis, own repos)"
+            git commit -m "chore(readme): clean latest activity"
             git push
           else
             echo "No changes to commit."
