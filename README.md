@@ -50,9 +50,8 @@ Currently developing three projects (🔒 private repositories for now — will 
 ---
 
 ## 🔗 Links
-[![Portfolio](https://img.shields.io/badge/Portfolio-WIP-orange?style=flat-square&logo=vercel&logoColor=white)](#)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Maxime%20Truel-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/maxime-truel/)
-[![Twitter](https://img.shields.io/badge/Twitter-@0xMaksiime-1DA1F2?style=flat-square&logo=twitter&logoColor=white)](https://x.com/0xMaksiime)
+[![X](https://img.shields.io/badge/X-@0xMaksiime-black?style=flat-square&logo=x&logoColor=white)](https://x.com/0xMaksiime)
 [![Email](https://img.shields.io/badge/Email-9865%40holbertonstudents.com-red?style=flat-square&logo=gmail&logoColor=white)](mailto:9865@holbertonstudents.com)
 
 ---
