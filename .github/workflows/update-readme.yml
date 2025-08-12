@@ -1,4 +1,4 @@
-name: Update profile README (merged activity)
+name: Update profile README (activity + stars)
 
 on:
   workflow_dispatch:
@@ -17,122 +17,122 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build merged activity (events + stars with caps)
+      - name: Build sections with GitHub API
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
 
-            // --- Locate README (any casing)
             const candidates = ['README.md','Readme.md','README.MD','readme.md'];
-            const readmePath = candidates.find(p => fs.existsSync(p));
-            if (!readmePath) { core.setFailed('README file not found.'); process.exit(1); }
+            let readmePath = candidates.find(p => fs.existsSync(p));
+            if (!readmePath) {
+              core.setFailed('README file not found.');
+              process.exit(1);
+            }
 
-            // --- Ensure ACTIVITY section exists (exact markers)
             function ensureSection(tag, title, md) {
-              const start = `<!-- ${tag}:START -->`;
-              const end   = `<!-- ${tag}:END -->`;
-              if (!md.toLowerCase().includes(start.toLowerCase()) || !md.toLowerCase().includes(end.toLowerCase())) {
-                md += `\n\n## ${title}\n${start}\n${end}\n`;
+              const startMarker = `<!-- ${tag}:START -->`;
+              const endMarker = `<!-- ${tag}:END -->`;
+              if (!md.toLowerCase().includes(startMarker.toLowerCase()) ||
+                  !md.toLowerCase().includes(endMarker.toLowerCase())) {
+                md += `\n\n## ${title}\n${startMarker}\n${endMarker}\n`;
                 fs.writeFileSync(readmePath, md);
               }
             }
+
             let md = fs.readFileSync(readmePath, 'utf8');
             ensureSection('ACTIVITY', '🔄 Latest activity', md);
             md = fs.readFileSync(readmePath, 'utf8');
 
-            // --- Helpers
+            function fmtDate(iso) {
+              const date = new Date(iso);
+              return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            }
             const username = process.env.TARGET_USERNAME || context.repo.owner;
-            const icon = {
+
+            const typeIcon = {
               WatchEvent: '👀 Watched',
               CreateEvent: '🆕 Created',
-              PushEvent:   '📤 Pushed',
-              ForkEvent:   '🍴 Forked',
+              PushEvent: '📤 Pushed',
+              ForkEvent: '🍴 Forked',
               IssuesEvent: '🐞 Issue',
               IssueCommentEvent: '💬 Issue comment',
               PullRequestEvent: '🔀 PR',
               PullRequestReviewEvent: '📝 PR review',
               ReleaseEvent: '🏷️ Release',
               PublicEvent: '🌐 Public',
-              Starred: '⭐ Starred'
+              StarredEvent: '⭐ Starred'
             };
-            const fmtDate = iso =>
-              new Date(iso).toLocaleDateString('en-US', { timeZone: 'Europe/Paris', month: 'short', day: 'numeric', year: 'numeric' });
 
-            // --- Fetch public events (newest first)
             const { data: eventsRaw } = await github.rest.activity.listPublicEventsForUser({
               username,
               per_page: 50
             }).catch(() => ({ data: [] }));
 
-            const asEventItems = (eventsRaw || []).map(e => ({
-              kind: 'event',
-              id: e.id,
-              date: e.created_at,
-              type: e.type,                // e.g., PushEvent
-              repo: e.repo?.name || '',
-              url: e.repo ? `https://github.com/${e.repo.name}` : '',
-              desc: ''
-            }));
-
-            // --- Fetch last stars with starred_at (need special Accept header)
             const { data: starsRaw } = await github.rest.activity.listReposStarredByUser({
               username,
-              per_page: 50,
-              headers: { accept: 'application/vnd.github.v3.star+json' }
+              per_page: 10
             }).catch(() => ({ data: [] }));
 
-            const asStarItems = (starsRaw || []).map(s => {
+            const starEvents = (starsRaw || []).map(s => {
               const r = s.repo || s;
-              const starredAt = s.starred_at || r.starred_at || r.pushed_at || r.updated_at || r.created_at;
-              const full = r.full_name || (r.owner?.login && r.name ? `${r.owner.login}/${r.name}` : '');
+              const full = r.full_name || `${r.owner?.login}/${r.name}`;
+              const desc = (r.description || '').replace(/\r?\n/g, ' ').trim();
               return {
-                kind: 'star',
-                id: `star-${full}-${starredAt || ''}`,
-                date: starredAt,
-                type: 'Starred',
+                type: 'StarredEvent',
                 repo: full,
-                url: full ? `https://github.com/${full}` : '',
-                desc: (r.description || '').replace(/\r?\n/g, ' ').trim()
+                date: s.starred_at || s.created_at || new Date().toISOString(),
+                desc
               };
             });
 
-            // --- Merge & sort by date desc
-            const merged = [...asEventItems, ...asStarItems]
-              .filter(x => x.repo && x.url && x.date)
-              .sort((a,b) => new Date(b.date) - new Date(a.date));
+            const allItems = [
+              ...(eventsRaw || []).map(e => ({
+                type: e.type,
+                repo: e.repo?.name,
+                date: e.created_at,
+                desc: ''
+              })),
+              ...starEvents
+            ].sort((a, b) => new Date(b.date) - new Date(a.date));
 
-            // --- Build final list with caps: max 10; ≤2 per repo; ≤2 per type; dedupe exact ids
             const maxItems = 10;
             const capPerRepo = 2;
             const capPerType = 2;
-            const seenIds = new Set();
             const perRepo = {};
             const perType = {};
-            const final = [];
+            const seenCombos = new Set();
 
-            for (const it of merged) {
-              if (seenIds.has(it.id)) continue;
+            const finalList = [];
+            for (const it of allItems) {
+              if (!it.repo) continue;
+              const comboKey = `${it.type}-${it.repo}`;
               if ((perRepo[it.repo] || 0) >= capPerRepo) continue;
-              const typeKey = it.type; // e.g., 'PushEvent' or 'Starred'
-              if ((perType[typeKey] || 0) >= capPerType) continue;
+              if ((perType[it.type] || 0) >= capPerType) continue;
+              if (seenCombos.has(comboKey)) continue;
 
-              seenIds.add(it.id);
               perRepo[it.repo] = (perRepo[it.repo] || 0) + 1;
-              perType[typeKey] = (perType[typeKey] || 0) + 1;
+              perType[it.type] = (perType[it.type] || 0) + 1;
+              seenCombos.add(comboKey);
 
-              const label = icon[typeKey] || icon[typeKey+'Event'] || typeKey.replace('Event','');
-              const desc = it.desc ? ` — ${it.desc}` : '';
-              final.push(`- 📅 ${fmtDate(it.date)} — ${label} [${it.repo}](${it.url})${desc}`);
+              const label = typeIcon[it.type] || it.type || 'Event';
+              if (it.type === 'StarredEvent' && it.desc) {
+                finalList.push(`📅 ${fmtDate(it.date)} — ${label} [${it.repo}](https://github.com/${it.repo}) — ${it.desc}`);
+              } else {
+                finalList.push(`📅 ${fmtDate(it.date)} — ${label} [${it.repo}](https://github.com/${it.repo})`);
+              }
 
-              if (final.length >= maxItems) break;
+              if (finalList.length >= maxItems) break;
             }
 
-            const content = final.length ? final.join('\n') : '- No recent public activity.';
+            const activityContent = finalList.length ? finalList.join('\n') : '- No recent public activity.';
 
-            // --- Replace between markers
-            const re = /(<!--\s*ACTIVITY:START\s*-->)([\s\S]*?)(<!--\s*ACTIVITY:END\s*-->)/i;
-            md = md.replace(re, `$1\n${content}\n$3`);
+            function replaceBetween(md, tag, newContent) {
+              const re = new RegExp(`(<!--\\s*${tag}:START\\s*-->)([\\s\\S]*?)(<!--\\s*${tag}:END\\s*-->)`, 'i');
+              return md.replace(re, `$1\n${newContent}\n$3`);
+            }
+
+            md = replaceBetween(md, 'ACTIVITY', activityContent);
             fs.writeFileSync(readmePath, md);
 
       - name: Commit & push if changed
@@ -141,7 +141,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit -m "chore(readme): merged latest activity with per-repo & per-type caps"
+            git commit -m "chore(readme): update latest activity (filtered duplicates)"
             git push
           else
             echo "No changes to commit."
