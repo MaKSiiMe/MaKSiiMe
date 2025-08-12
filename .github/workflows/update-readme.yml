@@ -102,11 +102,8 @@ jobs:
 
             // Replace content between markers
             function replaceBetween(md, tag, newContent) {
-              const startMarker = `<!-- ${tag}:START -->`;
-              const endMarker = `<!-- ${tag}:END -->`;
-              const startIdx = md.indexOf(startMarker) + startMarker.length;
-              const endIdx = md.indexOf(endMarker);
-              return md.slice(0, startIdx) + '\n' + newContent + '\n' + md.slice(endIdx);
+              const re = new RegExp(`(<!--\\s*${tag}:START\\s*-->)([\\s\\S]*?)(<!--\\s*${tag}:END\\s*-->)`, 'i');
+              return md.replace(re, `$1\n${newContent}\n$3`);
             }
 
             md = replaceBetween(md, 'ACTIVITY', activityContent);
