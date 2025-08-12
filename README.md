@@ -51,13 +51,12 @@ Currently developing three projects (🔒 private repositories for now — will 
 
 ## 🔗 Links
 <p align="center">
-  <a href="https://www.linkedin.com/in/maxime-truel/" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.linkedin.com/in/maxime-truel/" target="_blank">
     <img src="https://skillicons.dev/icons?i=linkedin" height="34" alt="LinkedIn">
   </a>
   &nbsp;&nbsp;
-  <a href="https://x.com/0xMaksiime" target="_blank" rel="noopener noreferrer">
-    <img src="https://cdn.simpleicons.org/x/FFFFFF" height="26" alt="X"
-         style="background:#111;border-radius:6px;padding:4px;display:inline-block;">
+  <a href="https://x.com/0xMaksiime" target="_blank">
+    <img src="https://cdn.simpleicons.org/x/FFFFFF" height="26" alt="X" style="background:#111;border-radius:6px;padding:4px;">
   </a>
   &nbsp;&nbsp;
   <a href="mailto:9865@holbertonstudents.com">
