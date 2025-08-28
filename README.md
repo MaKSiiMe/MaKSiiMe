@@ -40,7 +40,6 @@ Currently developing three projects (🔒 private repositories for now — will 
 - Aug 25, 2025 — 📤 Pushed [🔥 MaKSiiMe/holbertonschool-machine_learning](https://github.com/MaKSiiMe/holbertonschool-machine_learning)
 - Aug 12, 2025 — 📤 Pushed [🔥 MaKSiiMe/MaKSiiMe](https://github.com/MaKSiiMe/MaKSiiMe)
 - Aug 4, 2025 — ⭐ Starred [zama-ai/fhevm](https://github.com/zama-ai/fhevm)
-- Jul 29, 2025 — ⭐ Starred [roboflow/supervision](https://github.com/roboflow/supervision)
 <!-- ACTIVITY:END -->
 
 ---
