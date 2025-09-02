@@ -37,8 +37,8 @@ Currently developing three projects (🔒 private repositories for now — will 
 
 ## 🔄 Latest activity
 <!-- ACTIVITY:START -->
+- Sep 1, 2025 — 📤 Pushed [🔥 MaKSiiMe/holbertonschool-interview](https://github.com/MaKSiiMe/holbertonschool-interview)
 - Aug 29, 2025 — 📤 Pushed [🔥 MaKSiiMe/holbertonschool-machine_learning](https://github.com/MaKSiiMe/holbertonschool-machine_learning)
-- Aug 12, 2025 — 📤 Pushed [🔥 MaKSiiMe/MaKSiiMe](https://github.com/MaKSiiMe/MaKSiiMe)
 - Aug 4, 2025 — ⭐ Starred [zama-ai/fhevm](https://github.com/zama-ai/fhevm)
 <!-- ACTIVITY:END -->
 
