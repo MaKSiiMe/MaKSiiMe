@@ -39,7 +39,6 @@ Currently developing three projects (🔒 private repositories for now — will 
 <!-- ACTIVITY:START -->
 - Oct 2, 2025 — 📤 Pushed [🔥 MaKSiiMe/holbertonschool-machine_learning](https://github.com/MaKSiiMe/holbertonschool-machine_learning)
 - Sep 28, 2025 — 📤 Pushed [🔥 MaKSiiMe/holbertonschool-interview](https://github.com/MaKSiiMe/holbertonschool-interview)
-- Sep 5, 2025 — 👀 Watched [score-technologies/turbovision](https://github.com/score-technologies/turbovision)
 <!-- ACTIVITY:END -->
 
 ---
