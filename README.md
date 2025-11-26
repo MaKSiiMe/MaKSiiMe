@@ -37,9 +37,11 @@ Currently developing three projects (🔒 private repositories for now — will 
 
 ## 🔄 Latest activity
 <!-- ACTIVITY:START -->
-- Nov 23, 2025 — 👀 Watched [TASEmulators/BizHawk](https://github.com/TASEmulators/BizHawk)
-- Nov 23, 2025 — ⭐ Starred [TASEmulators/BizHawk](https://github.com/TASEmulators/BizHawk)
-- Nov 21, 2025 — 📤 Pushed [🔥 MaKSiiMe/holbertonschool-machine_learning](https://github.com/MaKSiiMe/holbertonschool-machine_learning)
+- Nov 25, 2025 — 👀 Watched [PWhiddy/PokemonRedExperiments](https://github.com/PWhiddy/PokemonRedExperiments)
+- Nov 25, 2025 — ⭐ Starred [PWhiddy/PokemonRedExperiments](https://github.com/PWhiddy/PokemonRedExperiments)
+- Nov 25, 2025 — 👀 Watched [Baekalfen/PyBoy](https://github.com/Baekalfen/PyBoy)
+- Nov 25, 2025 — ⭐ Starred [Baekalfen/PyBoy](https://github.com/Baekalfen/PyBoy)
+- Nov 25, 2025 — 📤 Pushed [🔥 MaKSiiMe/holbertonschool-machine_learning](https://github.com/MaKSiiMe/holbertonschool-machine_learning)
 - Nov 14, 2025 — 🏷️ Release [🔥 MaKSiiMe/smartmoney-hyperliquid-bot](https://github.com/MaKSiiMe/smartmoney-hyperliquid-bot)
 - Nov 14, 2025 — 📤 Pushed [🔥 MaKSiiMe/smartmoney-hyperliquid-bot](https://github.com/MaKSiiMe/smartmoney-hyperliquid-bot)
 - Nov 10, 2025 — 🆕 Created [🔥 MaKSiiMe/Transfer_Learning](https://github.com/MaKSiiMe/Transfer_Learning)
