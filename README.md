@@ -37,13 +37,13 @@ Currently developing three projects (🔒 private repositories for now — will 
 
 ## 🔄 Latest activity
 <!-- ACTIVITY:START -->
-- Dec 8, 2025 — 📤 Pushed [🔥 MaKSiiMe/holbertonschool-machine_learning](https://github.com/MaKSiiMe/holbertonschool-machine_learning)
+- Dec 11, 2025 — 👀 Watched [mlabonne/llm-course](https://github.com/mlabonne/llm-course)
+- Dec 11, 2025 — ⭐ Starred [mlabonne/llm-course](https://github.com/mlabonne/llm-course)
+- Dec 10, 2025 — 📤 Pushed [🔥 MaKSiiMe/holbertonschool-machine_learning](https://github.com/MaKSiiMe/holbertonschool-machine_learning)
 - Dec 5, 2025 — 👀 Watched [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
 - Dec 5, 2025 — ⭐ Starred [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
 - Dec 5, 2025 — 📤 Pushed [🔥 MaKSiiMe/PokemonBlueExperiments](https://github.com/MaKSiiMe/PokemonBlueExperiments)
 - Nov 26, 2025 — 🆕 Created [🔥 MaKSiiMe/PokemonBlueExperiments](https://github.com/MaKSiiMe/PokemonBlueExperiments)
-- Nov 25, 2025 — 👀 Watched [PWhiddy/PokemonRedExperiments](https://github.com/PWhiddy/PokemonRedExperiments)
-- Nov 25, 2025 — ⭐ Starred [PWhiddy/PokemonRedExperiments](https://github.com/PWhiddy/PokemonRedExperiments)
 - Nov 14, 2025 — 🏷️ Release [🔥 MaKSiiMe/smartmoney-hyperliquid-bot](https://github.com/MaKSiiMe/smartmoney-hyperliquid-bot)
 - Nov 11, 2025 — 🆕 Created [🔥 MaKSiiMe/smartmoney-hyperliquid-bot](https://github.com/MaKSiiMe/smartmoney-hyperliquid-bot)
 <!-- ACTIVITY:END -->
