@@ -45,7 +45,6 @@ Currently developing three projects (🔒 private repositories for now — will 
 - Dec 5, 2025 — 📤 Pushed [🔥 MaKSiiMe/PokemonBlueExperiments](https://github.com/MaKSiiMe/PokemonBlueExperiments)
 - Nov 26, 2025 — 🆕 Created [🔥 MaKSiiMe/PokemonBlueExperiments](https://github.com/MaKSiiMe/PokemonBlueExperiments)
 - Nov 14, 2025 — 🏷️ Release [🔥 MaKSiiMe/smartmoney-hyperliquid-bot](https://github.com/MaKSiiMe/smartmoney-hyperliquid-bot)
-- Nov 11, 2025 — 🆕 Created [🔥 MaKSiiMe/smartmoney-hyperliquid-bot](https://github.com/MaKSiiMe/smartmoney-hyperliquid-bot)
 <!-- ACTIVITY:END -->
 
 ---
