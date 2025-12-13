@@ -1,41 +1,100 @@
-# Maxime Truel — AI/ML × Web3
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0D1117&height=180&section=header&text=Maxime%20Truel&fontSize=72&animation=fadeIn&fontAlignY=38&desc=AI/ML%20Student%20%7C%20Web%203%20Enthusiast&descAlignY=55&descAlign=50" alt="Maxime Truel Header" width="100%"/>
+</div>
 
-> Year 2 student @ [Holberton School](https://www.holbertonschool.fr/), specializing in **Artificial Intelligence & Machine Learning**. Currently seeking a **3–6 month internship** starting May/June 2026.  
-> Passionate about **Web3** and **innovative finance** — exploring unique financial products for everyday people, investment research, and the integration of **automation**, **AI**, and **blockchain**.
+<div align="center">
 
-🎓 **Degree in progress**: International Holberton School diploma + [RNCP Level 6 — Application Developer Designer](https://www.francecompetences.fr/recherche/rncp/37873/) (Bachelor’s degree equivalent — Bac+3/4, recognized by the French state).
+  <a href="https://www.linkedin.com/in/maxime-truel/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+  <a href="https://github.com/MaKSiiMe" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
+  <a href="mailto:9865@holbertonstudents.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+  </a>
 
----
+  <br /><br />
 
-## 🔎 About
-I focus on creating small, composable tools with clean documentation and simple UX.  
-Currently developing three projects (🔒 private repositories for now — will be made public once a V0 is ready):  
-- [Stock Picker AI](https://github.com/MaKSiiMe/stock-picker-ai) — A semi-autonomous tool to detect promising company stocks based on 30+ criteria.  
-- [Bittensor Subnet Dashboard](https://github.com/MaKSiiMe/bittensor-subnet-dashboard) — Provides price movement insights, key metrics, and recent updates for each subnet.  
-- [Bitcoin Indicator Aggregator](https://github.com/MaKSiiMe/bitcoin-indicator-aggregator) — Aggregates multiple market indicators to identify optimal buy/sell windows.
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=38BDF8&center=true&vCenter=true&width=600&lines=Year+2+%40+Holberton+School;AI%2FML+%26+Reinforcement+Learning;Building+Financial+Intelligence+Tools;Open+to+Internship+May%2FJune+2026" alt="Typing SVG" />
+  </a>
 
----
-
-## ✨ Highlights
-- 🎓 **Holberton School — Year 2, AI/ML specialization** — project-based learning, peer reviews, and hands-on problem solving.
-- 🧪 **Hackathons & events** — Chiliz Hackathon (sport × blockchain), Proof of Talk, VivaTech.
-- 🧰 **Tech stack (AI/ML)**: Python, NumPy, Pandas, Matplotlib, TensorFlow, Keras, PyTorch, Gymnasium, MongoDB, Algorithms & Data Structures.
-- 🛠️ **Tech stack (Web3)**: Solidity, Remix, Hardhat, Foundry, Truffle, Metamask, IPFS, ERC20/ERC721 standards.
-- 🔧 **Backend & DevOps tools**: FastAPI, Flask, Git, Docker.
-
----
-
-## 🧭 Now
-- **Holberton School (AI/ML)** — Working on mathematics foundations (Linear Algebra, Calculus, Probability) and supervised learning topics: classification, regularization, optimization, error analysis, CNNs, transfer learning, object detection, face verification, and neural style transfer.
-- **Web3** — Currently on pause.
-- **Personal projects**:
-  - **Stock Picker AI** — Collecting and formatting data from multiple APIs based on stock tickers.
-  - **Bittensor Dashboard** — In MVP conception/brainstorming phase.
-  - **Bitcoin Indicator Aggregator** — Defining and selecting key indicators to combine into a single 0–100 signal.
+</div>
 
 ---
 
-## 🔄 Latest activity
+## 🎯 Quick Overview
+**Seeking**: 3–6 month internship (May/June 2026) — AI/ML, FinTech, Web3  
+**Focus**: AI automation for financial markets & blockchain  
+**Education**: Year 2 @ [Holberton School](https://www.holbertonschool.fr/) — [RNCP Level 6](https://www.francecompetences.fr/recherche/rncp/37873/) (Bachelor's equivalent)
+
+---
+
+## 🔎 About Me
+I build **AI-powered tools** at the intersection of machine learning, finance, and automation. My approach: start small, iterate fast, and ship composable tools with clean documentation.
+
+**Current work spans three areas:**
+- 🤖 **Reinforcement Learning** — Training autonomous agents for complex decision-making
+- 💰 **Financial Intelligence** — Building tools for market analysis and prediction
+- 🎮 **Applied ML** — Experimenting with computer vision and game AI
+
+---
+
+## 🧰 Tech Stack
+
+<div align="center">
+
+| **Domain** | **Technologies** |
+| :--- | :--- |
+| **🤖 AI & Data** | <img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,opencv,numpy,pandas,scikitlearn,matplotlib" /> |
+| **⛓️ Web3** | <img src="https://skillicons.dev/icons?i=solidity,ipfs,metamask" /> <br/> `Hardhat` `Foundry` `Remix` `Web3.py` |
+| **🛠️ Backend & Tools** | <img src="https://skillicons.dev/icons?i=fastapi,flask,docker,git,linux,mongodb," /> |
+
+</div>
+
+---
+
+## 🚀 Projects Lab
+
+### 🎮 Public Projects
+| Project | Description | Stack |
+| :--- | :--- | :--- |
+| **[Pokémon Blue AI Agent](https://github.com/MaKSiiMe/PokemonBlueExperiments)** | Autonomous RL agent beating the first champion with YOLO + PPO/DQN. | `PyTorch` `YOLO` `OpenAI Gym` |
+| **[Holberton Dashboard](https://github.com/MaKSiiMe/)** | MMORPG-style dashboard using Holberton API (gamification). | `FastAPI` `MongoDB` |
+| **[Prediction Market Bot](https://github.com/MaKSiiMe/)** | Automated bot for prediction market analysis/execution. | `Python` `Web3.py` |
+
+### 🔒 Private Projects (V0)
+| Project | Status | Note |
+| :--- | :--- | :--- |
+| **Stock Picker AI** | Data collection | 30+ fundamental criteria screener |
+| **Bittensor Subnet Dashboard** | MVP concept | Subnet analytics & metrics |
+| **Bitcoin Indicator Aggregator** | R&D | Unified 0–100 buy/sell signal |
+
+---
+
+## 🧭 Current Focus & Learning
+* **Holberton School:** Math foundations (Linear Algebra, Calculus), CNNs, Object Detection, Neural Style Transfer.  
+* **Hackathons & évents:** Chiliz Hackathon (Sport×Blockchain), Proof of Talk, VivaTech.  
+* **Status:** ⏸️ Web3 dev paused to focus on **AI/ML fundamentals**.
+
+---
+
+## 📊 GitHub Stats
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=MaKSiiMe&show_icons=true&theme=github_dark&hide_border=true&include_all_commits=true&count_private=true&cache_seconds=7200&rank_icon=github" height="170" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MaKSiiMe&layout=compact&theme=github_dark&hide_border=true&langs_count=8&cache_seconds=7200" height="170" alt="Top Languages" />
+  <br/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=MaKSiiMe&theme=github-dark-blue&hide_border=true" height="150" alt="GitHub Streak" />
+</div>
+
+<br/>
+
+<details>
+<summary>📌 <b>Recent Activity Log</b> (Click to expand)</summary>
+<br/>
+
 <!-- ACTIVITY:START -->
 - Dec 11, 2025 — 👀 Watched [mlabonne/llm-course](https://github.com/mlabonne/llm-course)
 - Dec 11, 2025 — ⭐ Starred [mlabonne/llm-course](https://github.com/mlabonne/llm-course)
@@ -47,28 +106,4 @@ Currently developing three projects (🔒 private repositories for now — will 
 - Nov 14, 2025 — 🏷️ Release [🔥 MaKSiiMe/smartmoney-hyperliquid-bot](https://github.com/MaKSiiMe/smartmoney-hyperliquid-bot)
 <!-- ACTIVITY:END -->
 
----
-
-## 🔗 Links
-<p align="center">
-  <a href="https://www.linkedin.com/in/maxime-truel/" target="_blank">
-    <img src="https://skillicons.dev/icons?i=linkedin" height="34" alt="LinkedIn">
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://x.com/0xMaksiime" target="_blank">
-    <img src="https://cdn.simpleicons.org/x/FFFFFF" height="26" alt="X" style="background:#111;border-radius:6px;padding:4px;">
-  </a>
-  &nbsp;&nbsp;
-  <a href="mailto:9865@holbertonstudents.com">
-    <img src="https://skillicons.dev/icons?i=gmail" height="34" alt="Email">
-  </a>
-</p>
-
----
-
-## 📊 Widgets
-<p align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=MaKSiiMe&show_icons=true&hide_title=true&theme=github_dark&hide_border=true" alt="Stats">
-  &nbsp;&nbsp;
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MaKSiiMe&layout=compact&theme=github_dark&hide_border=true" alt="Top languages">
-</p>
+</details>

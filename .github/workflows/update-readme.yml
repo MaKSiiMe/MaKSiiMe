@@ -1,4 +1,4 @@
-name: Update profile README (latest activity – clean bullets)
+name: Update profile README (latest activity)
 
 on:
   workflow_dispatch:
@@ -28,17 +28,19 @@ jobs:
             const readmePath = candidates.find(p => fs.existsSync(p));
             if (!readmePath) { core.setFailed('README file not found.'); process.exit(1); }
 
-            // Ensure ACTIVITY section
+            // Ensure ACTIVITY section exists
             function ensureSection(tag, title, md) {
               const start = `<!-- ${tag}:START -->`;
               const end   = `<!-- ${tag}:END -->`;
               if (!md.toLowerCase().includes(start.toLowerCase()) || !md.toLowerCase().includes(end.toLowerCase())) {
-                md += `\n\n## ${title}\n${start}\n${end}\n`;
+                const detailsStart = `<details>\n<summary>📌 <b>${title}</b> (Click to expand)</summary>\n<br/>\n`;
+                const detailsEnd = `\n</details>`;
+                md += `\n\n${detailsStart}${start}\n${end}${detailsEnd}\n`;
                 fs.writeFileSync(readmePath, md);
               }
             }
             let md = fs.readFileSync(readmePath, 'utf8');
-            ensureSection('ACTIVITY', '🔄 Latest activity', md);
+            ensureSection('ACTIVITY', 'Recent Activity Log', md);
             md = fs.readFileSync(readmePath, 'utf8');
 
             const username = process.env.TARGET_USERNAME || context.repo.owner;
@@ -57,7 +59,6 @@ jobs:
               StarredEvent: '⭐ Starred'
             };
 
-            // 🔥 for own repos, no bold to keep lines short
             function formatRepo(repoFullName) {
               if (!repoFullName) return '';
               return repoFullName.startsWith(`${username}/`)
@@ -78,7 +79,7 @@ jobs:
               per_page: 50
             }).catch(() => ({ data: [] }));
 
-            // Fetch recent stars (with starred_at)
+            // Fetch recent stars
             const { data: starsRaw } = await github.rest.activity.listReposStarredByUser({
               username,
               per_page: 50,
@@ -104,16 +105,12 @@ jobs:
               };
             });
 
-            // Merge & keep last 30 days if available
-            const now = Date.now();
-            const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
+            // Merge & sort all activities (no time limit)
             let merged = [...eventItems, ...starItems]
               .filter(x => x.repo && x.url && x.date)
               .sort((a,b) => new Date(b.date) - new Date(a.date));
-            const recent = merged.filter(x => (now - new Date(x.date).getTime()) <= THIRTY_DAYS_MS);
-            if (recent.length) merged = recent;
 
-            // Caps & de-dup: 10 max, ≤2 per repo, ≤2 per type, and not same type+repo twice
+            // Caps & de-dup: 10 max, ≤2 per repo, ≤2 per type
             const maxItems = 10;
             const capPerRepo = 2;
             const capPerType = 2;
@@ -134,7 +131,6 @@ jobs:
 
               const label = typeIcon[it.type] || it.type.replace('Event','');
               const repoFmt = formatRepo(it.repo);
-              // No descriptions to avoid wrapping
               lines.push(`- ${fmtDate(it.date)} — ${label} [${repoFmt}](${it.url})`);
 
               if (lines.length >= maxItems) break;
@@ -151,7 +147,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit -m "chore(readme): latest activity (bulleted, no descriptions)"
+            git commit -m "chore(readme): update recent activity"
             git push
           else
             echo "No changes to commit."
