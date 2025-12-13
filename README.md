@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0D1117&height=180&section=header&text=Maxime%20Truel&fontSize=72&animation=fadeIn&fontAlignY=38&desc=AI/ML%20Student%20%7C%20Web%203%20Enthusiast&descAlignY=55&descAlign=50" alt="Maxime Truel Header" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=180&section=header&text=Maxime%20Truel&fontSize=72&animation=fadeIn&fontAlignY=35&desc=AI/ML%20Student%20%7C%20Web3%20Enthusiast&descAlignY=55&descAlign=50&descAlign=50&fontColor=ffffff" alt="Maxime Truel Header" width="100%"/>
 </div>
 
 <div align="center">
@@ -14,10 +14,10 @@
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
   </a>
 
-  <br /><br />
+  <br />
 
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=38BDF8&center=true&vCenter=true&width=600&lines=Year+2+%40+Holberton+School;AI%2FML+%26+Reinforcement+Learning;Building+Financial+Intelligence+Tools;Open+to+Internship+May%2FJune+2026" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=38BDF8&center=true&vCenter=true&width=600&lines=Year+2+%40+Holberton+School;Seeking+Internship+(May%2FJune+2026);AI%2FML+%26+Reinforcement+Learning;Seeking+Master%27s+Alternance+(2026%2F28);Building+Financial+Intelligence+Tools" alt="Typing SVG" />
   </a>
 
 </div>
@@ -25,7 +25,8 @@
 ---
 
 ## 🎯 Quick Overview
-**Seeking**: 3–6 month internship (May/June 2026) — AI/ML, FinTech, Web3  
+**Internship**: 3–6 months (May/June 2026) — AI/ML, FinTech, Web3  
+**Master's Program**: Work-study alternance (2026–2028) in AI/ML or related field  
 **Focus**: AI automation for financial markets & blockchain  
 **Education**: Year 2 @ [Holberton School](https://www.holbertonschool.fr/) — [RNCP Level 6](https://www.francecompetences.fr/recherche/rncp/37873/) (Bachelor's equivalent)
 
