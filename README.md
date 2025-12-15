@@ -97,6 +97,7 @@ I build **AI-powered tools** at the intersection of machine learning, finance, a
 <br/>
 
 <!-- ACTIVITY:START -->
+- Dec 14, 2025 — 🆕 Created [🔥 MaKSiiMe/Polymarket_betting_bot](https://github.com/MaKSiiMe/Polymarket_betting_bot)
 - Dec 13, 2025 — 📤 Pushed [🔥 MaKSiiMe/MaKSiiMe](https://github.com/MaKSiiMe/MaKSiiMe)
 - Dec 11, 2025 — 👀 Watched [mlabonne/llm-course](https://github.com/mlabonne/llm-course)
 - Dec 11, 2025 — ⭐ Starred [mlabonne/llm-course](https://github.com/mlabonne/llm-course)
@@ -104,7 +105,6 @@ I build **AI-powered tools** at the intersection of machine learning, finance, a
 - Dec 5, 2025 — 👀 Watched [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
 - Dec 5, 2025 — ⭐ Starred [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
 - Nov 26, 2025 — 🆕 Created [🔥 MaKSiiMe/PokemonBlueExperiments](https://github.com/MaKSiiMe/PokemonBlueExperiments)
-- Nov 14, 2025 — 🏷️ Release [🔥 MaKSiiMe/smartmoney-hyperliquid-bot](https://github.com/MaKSiiMe/smartmoney-hyperliquid-bot)
 <!-- ACTIVITY:END -->
 
 </details>
