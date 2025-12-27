@@ -104,7 +104,6 @@ I build **AI-powered tools** at the intersection of machine learning, finance, a
 - Dec 11, 2025 — ⭐ Starred [mlabonne/llm-course](https://github.com/mlabonne/llm-course)
 - Dec 5, 2025 — 👀 Watched [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
 - Dec 5, 2025 — ⭐ Starred [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
-- Nov 26, 2025 — 🆕 Created [🔥 MaKSiiMe/PokemonBlueExperiments](https://github.com/MaKSiiMe/PokemonBlueExperiments)
 <!-- ACTIVITY:END -->
 
 </details>
