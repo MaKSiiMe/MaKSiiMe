@@ -97,13 +97,13 @@ I build **AI-powered tools** at the intersection of machine learning, finance, a
 <br/>
 
 <!-- ACTIVITY:START -->
+- Jan 3, 2026 — 👀 Watched [we-promise/sure](https://github.com/we-promise/sure)
+- Jan 3, 2026 — ⭐ Starred [we-promise/sure](https://github.com/we-promise/sure)
 - Dec 21, 2025 — 📤 Pushed [🔥 MaKSiiMe/holbertonschool-interview](https://github.com/MaKSiiMe/holbertonschool-interview)
 - Dec 18, 2025 — 📤 Pushed [🔥 MaKSiiMe/holbertonschool-machine_learning](https://github.com/MaKSiiMe/holbertonschool-machine_learning)
 - Dec 14, 2025 — 🆕 Created [🔥 MaKSiiMe/Polymarket_betting_bot](https://github.com/MaKSiiMe/Polymarket_betting_bot)
 - Dec 11, 2025 — 👀 Watched [mlabonne/llm-course](https://github.com/mlabonne/llm-course)
 - Dec 11, 2025 — ⭐ Starred [mlabonne/llm-course](https://github.com/mlabonne/llm-course)
-- Dec 5, 2025 — 👀 Watched [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
-- Dec 5, 2025 — ⭐ Starred [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
 <!-- ACTIVITY:END -->
 
 </details>
