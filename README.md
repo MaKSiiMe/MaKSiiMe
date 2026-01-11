@@ -102,7 +102,6 @@ I build **AI-powered tools** at the intersection of machine learning, finance, a
 - Jan 3, 2026 — ⭐ Starred [we-promise/sure](https://github.com/we-promise/sure)
 - Dec 21, 2025 — 📤 Pushed [🔥 MaKSiiMe/holbertonschool-interview](https://github.com/MaKSiiMe/holbertonschool-interview)
 - Dec 14, 2025 — 🆕 Created [🔥 MaKSiiMe/Polymarket_betting_bot](https://github.com/MaKSiiMe/Polymarket_betting_bot)
-- Dec 11, 2025 — 👀 Watched [mlabonne/llm-course](https://github.com/mlabonne/llm-course)
 - Dec 11, 2025 — ⭐ Starred [mlabonne/llm-course](https://github.com/mlabonne/llm-course)
 <!-- ACTIVITY:END -->
 
