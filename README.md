@@ -101,7 +101,6 @@ I build **AI-powered tools** at the intersection of machine learning, finance, a
 - Jan 26, 2026 — 👀 Watched [imputnet/helium](https://github.com/imputnet/helium)
 - Jan 26, 2026 — ⭐ Starred [imputnet/helium](https://github.com/imputnet/helium)
 - Jan 16, 2026 — 🆕 Created [🔥 MaKSiiMe/holbertonschool-ai4devs](https://github.com/MaKSiiMe/holbertonschool-ai4devs)
-- Jan 3, 2026 — 👀 Watched [we-promise/sure](https://github.com/we-promise/sure)
 - Jan 3, 2026 — ⭐ Starred [we-promise/sure](https://github.com/we-promise/sure)
 <!-- ACTIVITY:END -->
 
