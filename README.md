@@ -101,7 +101,6 @@ I build **AI-powered tools** at the intersection of machine learning, finance, a
 - Feb 15, 2026 — 👀 Watched [jlopp/physical-bitcoin-attacks](https://github.com/jlopp/physical-bitcoin-attacks)
 - Feb 15, 2026 — ⭐ Starred [jlopp/physical-bitcoin-attacks](https://github.com/jlopp/physical-bitcoin-attacks)
 - Feb 11, 2026 — 📤 Pushed [🔥 MaKSiiMe/PokemonBlueExperiments](https://github.com/MaKSiiMe/PokemonBlueExperiments)
-- Jan 26, 2026 — 👀 Watched [imputnet/helium](https://github.com/imputnet/helium)
 - Jan 26, 2026 — ⭐ Starred [imputnet/helium](https://github.com/imputnet/helium)
 <!-- ACTIVITY:END -->
 
