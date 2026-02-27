@@ -97,11 +97,12 @@ I build **AI-powered tools** at the intersection of machine learning, finance, a
 <br/>
 
 <!-- ACTIVITY:START -->
+- Feb 26, 2026 — 👀 Watched [srizzon/git-city](https://github.com/srizzon/git-city)
+- Feb 26, 2026 — ⭐ Starred [srizzon/git-city](https://github.com/srizzon/git-city)
 - Feb 20, 2026 — 📤 Pushed [🔥 MaKSiiMe/holbertonschool-interview](https://github.com/MaKSiiMe/holbertonschool-interview)
 - Feb 15, 2026 — 👀 Watched [jlopp/physical-bitcoin-attacks](https://github.com/jlopp/physical-bitcoin-attacks)
 - Feb 15, 2026 — ⭐ Starred [jlopp/physical-bitcoin-attacks](https://github.com/jlopp/physical-bitcoin-attacks)
 - Feb 11, 2026 — 📤 Pushed [🔥 MaKSiiMe/PokemonBlueExperiments](https://github.com/MaKSiiMe/PokemonBlueExperiments)
-- Jan 26, 2026 — ⭐ Starred [imputnet/helium](https://github.com/imputnet/helium)
 <!-- ACTIVITY:END -->
 
 </details>
