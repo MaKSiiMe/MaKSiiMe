@@ -97,14 +97,14 @@ I build **AI-powered tools** at the intersection of machine learning, finance, a
 <br/>
 
 <!-- ACTIVITY:START -->
+- Mar 26, 2026 — 👀 Watched [caelestia-dots/shell](https://github.com/caelestia-dots/shell)
+- Mar 26, 2026 — ⭐ Starred [caelestia-dots/shell](https://github.com/caelestia-dots/shell)
 - Mar 25, 2026 — 📤 Pushed [🔥 MaKSiiMe/VoxelPlace](https://github.com/MaKSiiMe/VoxelPlace)
 - Mar 24, 2026 — 🆕 Created [🔥 MaKSiiMe/VoxelPlace](https://github.com/MaKSiiMe/VoxelPlace)
 - Mar 22, 2026 — 📤 Pushed [🔥 MaKSiiMe/TheFarmerWasReplaced](https://github.com/MaKSiiMe/TheFarmerWasReplaced)
 - Mar 22, 2026 — 🆕 Created [🔥 MaKSiiMe/TheFarmerWasReplaced](https://github.com/MaKSiiMe/TheFarmerWasReplaced)
 - Mar 22, 2026 — 👀 Watched [mmalmi/nostr-vpn](https://github.com/mmalmi/nostr-vpn)
 - Mar 22, 2026 — ⭐ Starred [mmalmi/nostr-vpn](https://github.com/mmalmi/nostr-vpn)
-- Mar 11, 2026 — 👀 Watched [karpathy/autoresearch](https://github.com/karpathy/autoresearch)
-- Mar 11, 2026 — ⭐ Starred [karpathy/autoresearch](https://github.com/karpathy/autoresearch)
 <!-- ACTIVITY:END -->
 
 </details>
