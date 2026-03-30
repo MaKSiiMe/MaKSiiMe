@@ -46,7 +46,6 @@ jobs:
             const username = process.env.TARGET_USERNAME || context.repo.owner;
 
             const typeIcon = {
-              WatchEvent: '👀 Watched',
               CreateEvent: '🆕 Created',
               PushEvent:   '📤 Pushed',
               ForkEvent:   '🍴 Forked',
