@@ -3,7 +3,7 @@ name: Update profile README (latest activity)
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 5 * * *"  # 05:00 UTC daily (~07:00 Europe/Paris)
+    - cron: "0 5 * * 1"  # 05:00 UTC every Monday (~06:00/07:00 Europe/Paris)
 
 permissions:
   contents: write

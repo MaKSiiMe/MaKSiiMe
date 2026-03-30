@@ -39,6 +39,23 @@ I build **AI-powered tools** at the intersection of machine learning, finance, a
 - 🤖 **Machine Learning & AI** — Computer vision, model architectures, and decentralized systems
 - 🏠 **Home Lab** — Building local infrastructure for ML experimentation and research
 
+<details>
+<summary>📌 <b>Recent Activity Log</b> (Click to expand)</summary>
+<br/>
+
+<!-- ACTIVITY:START -->
+- Mar 29, 2026 — 📤 Pushed [🔥 MaKSiiMe/VoxelPlace](https://github.com/MaKSiiMe/VoxelPlace)
+- Mar 29, 2026 — 🆕 Created [🔥 MaKSiiMe/VoxelPlace](https://github.com/MaKSiiMe/VoxelPlace)
+- Mar 27, 2026 — 👀 Watched [vercel/turborepo](https://github.com/vercel/turborepo)
+- Mar 27, 2026 — ⭐ Starred [vercel/turborepo](https://github.com/vercel/turborepo)
+- Mar 26, 2026 — 👀 Watched [caelestia-dots/shell](https://github.com/caelestia-dots/shell)
+- Mar 26, 2026 — ⭐ Starred [caelestia-dots/shell](https://github.com/caelestia-dots/shell)
+- Mar 22, 2026 — 📤 Pushed [🔥 MaKSiiMe/TheFarmerWasReplaced](https://github.com/MaKSiiMe/TheFarmerWasReplaced)
+- Mar 22, 2026 — 🆕 Created [🔥 MaKSiiMe/TheFarmerWasReplaced](https://github.com/MaKSiiMe/TheFarmerWasReplaced)
+<!-- ACTIVITY:END -->
+
+</details>
+
 ---
 
 ## 🧰 Tech Stack
