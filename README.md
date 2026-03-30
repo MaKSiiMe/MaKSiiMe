@@ -97,22 +97,3 @@ I build **AI-powered tools** at the intersection of machine learning, finance, a
   <br/>
   <img src="https://streak-stats.demolab.com?user=MaKSiiMe&theme=github-dark-blue&hide_border=true" height="170" alt="GitHub Streak" />
 </div>
-
-<br/>
-
-<details>
-<summary>📌 <b>Recent Activity Log</b> (Click to expand)</summary>
-<br/>
-
-<!-- ACTIVITY:START -->
-- Mar 30, 2026 — 📤 Pushed [🔥 MaKSiiMe/MaKSiiMe](https://github.com/MaKSiiMe/MaKSiiMe)
-- Mar 29, 2026 — 📤 Pushed [🔥 MaKSiiMe/holbertonschool-machine_learning](https://github.com/MaKSiiMe/holbertonschool-machine_learning)
-- Mar 29, 2026 — 👀 Watched [🔥 MaKSiiMe/VoxelPlace](https://github.com/MaKSiiMe/VoxelPlace)
-- Mar 29, 2026 — 🆕 Created [🔥 MaKSiiMe/VoxelPlace](https://github.com/MaKSiiMe/VoxelPlace)
-- Mar 27, 2026 — 👀 Watched [vercel/turborepo](https://github.com/vercel/turborepo)
-- Mar 27, 2026 — ⭐ Starred [vercel/turborepo](https://github.com/vercel/turborepo)
-- Mar 26, 2026 — ⭐ Starred [caelestia-dots/shell](https://github.com/caelestia-dots/shell)
-- Mar 22, 2026 — 🆕 Created [🔥 MaKSiiMe/TheFarmerWasReplaced](https://github.com/MaKSiiMe/TheFarmerWasReplaced)
-<!-- ACTIVITY:END -->
-
-</details>
