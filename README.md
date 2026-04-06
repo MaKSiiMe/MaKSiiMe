@@ -44,14 +44,13 @@ I build **AI-powered tools** at the intersection of machine learning, finance, a
 <br/>
 
 <!-- ACTIVITY:START -->
-- Mar 31, 2026 — 📤 Pushed [🔥 MaKSiiMe/PokemonBlueExperiments](https://github.com/MaKSiiMe/PokemonBlueExperiments)
-- Mar 30, 2026 — 📤 Pushed [🔥 MaKSiiMe/MaKSiiMe](https://github.com/MaKSiiMe/MaKSiiMe)
-- Mar 29, 2026 — Watch [🔥 MaKSiiMe/VoxelPlace](https://github.com/MaKSiiMe/VoxelPlace)
+- Apr 6, 2026 — Watch [ruvnet/ruflo](https://github.com/ruvnet/ruflo)
+- Apr 6, 2026 — ⭐ Starred [ruvnet/ruflo](https://github.com/ruvnet/ruflo)
+- Apr 5, 2026 — 📤 Pushed [🔥 MaKSiiMe/PokemonBlueExperiments](https://github.com/MaKSiiMe/PokemonBlueExperiments)
+- Apr 5, 2026 — Watch [Timmoth/RackPeek](https://github.com/Timmoth/RackPeek)
+- Apr 5, 2026 — ⭐ Starred [Timmoth/RackPeek](https://github.com/Timmoth/RackPeek)
+- Apr 2, 2026 — 📤 Pushed [🔥 MaKSiiMe/VoxelPlace](https://github.com/MaKSiiMe/VoxelPlace)
 - Mar 29, 2026 — 🆕 Created [🔥 MaKSiiMe/VoxelPlace](https://github.com/MaKSiiMe/VoxelPlace)
-- Mar 27, 2026 — Watch [vercel/turborepo](https://github.com/vercel/turborepo)
-- Mar 27, 2026 — ⭐ Starred [vercel/turborepo](https://github.com/vercel/turborepo)
-- Mar 26, 2026 — ⭐ Starred [caelestia-dots/shell](https://github.com/caelestia-dots/shell)
-- Mar 22, 2026 — 🆕 Created [🔥 MaKSiiMe/TheFarmerWasReplaced](https://github.com/MaKSiiMe/TheFarmerWasReplaced)
 <!-- ACTIVITY:END -->
 
 </details>
