@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=180&section=header&text=Maxime%20Truel&fontSize=72&animation=fadeIn&fontAlignY=35&desc=AI/ML%20Student%20%7C%20Web3%20Enthusiast&descAlignY=55&descAlign=50&descAlign=50&fontColor=ffffff" alt="Maxime Truel Header" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=180&section=header&text=Maxime%20Truel&fontSize=72&animation=fadeIn&fontAlignY=35&desc=AI%2FML%20Student%20%7C%20Computer%20Vision%20%7C%20Real-time%20Systems&descAlignY=55&descAlign=50&descAlign=50&fontColor=ffffff" alt="Maxime Truel Header" width="100%"/>
 </div>
 
 <div align="center">
@@ -17,7 +17,7 @@
   <br />
 
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=38BDF8&center=true&vCenter=true&width=600&lines=Year+2+%40+Holberton+School;Internship+Signed+(May%2FAugust+2026);AI%2FML+%26+Decentralized+Computer+Vision;Seeking+Master%27s+Alternance+(2026%2F28);Building+ML+Systems+from+Home+Lab" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=38BDF8&center=true&vCenter=true&width=760&lines=Building+practical+AI%2FML+and+Web3+projects;Focus+on+Computer+Vision+and+Real-time+Systems;Internship+at+Manako+(SN44+on+Bittensor)" alt="Typing SVG" />
   </a>
 
 </div>
@@ -25,23 +25,26 @@
 ---
 
 ## 🎯 Quick Overview
-**Internship**: ✅ Signed for May–August 2026 (3–6 months) — AI/ML, Decentralized Computer Vision  
-**Master's Program**: Work-study alternance (2026–2028) in AI/ML or related field  
-**Focus**: ML systems, decentralized computer vision, and Home Lab experimentation  
-**Education**: Year 2 @ [Holberton School](https://www.holbertonschool.fr/) — [RNCP Level 6](https://www.francecompetences.fr/recherche/rncp/37873/) (Bachelor's equivalent)
+**Internship**: ✅ May–August 2026 at **Manako** (team behind **SN44/Score** on Bittensor)  
+**Master's Program**: Open to work-study alternance for 2026–2028  
+**Focus**: Computer vision, ML systems, Web3, and real-time applications  
+**Education**: Year 2 @ [Holberton School](https://www.holbertonschool.fr/) — [RNCP Level 6](https://www.francecompetences.fr/recherche/rncp/37873/)
 
 ---
 
 ## 🔎 About Me
-I build **AI-powered tools** at the intersection of machine learning, finance, and automation. My approach: start small, iterate fast, and ship composable tools with clean documentation.
+I build **practical AI/ML tools** with a focus on computer vision, automation, and real-time systems. I care about shipping projects that are understandable, testable, and documented well enough for other developers to reuse.
 
-**Current work spans two areas:**
-- 🤖 **Machine Learning & AI** — Computer vision, model architectures, and decentralized systems
-- 🏠 **Home Lab** — Building local infrastructure for ML experimentation and research
+**What I spend time on now:**
+- 🤖 **Machine Learning & AI** — Computer vision, model training, and deployment-oriented experiments
+- ⛓️ **Web3 & real-time systems** — Decentralized experiments, WebSocket-based architecture, backend orchestration, and state sync
+- 🏠 **Home Lab** — Hosting VoxelPlace services and testing new infrastructure setups
 
 <details>
 <summary>📌 <b>Recent Activity Log</b> (Click to expand)</summary>
 <br/>
+
+Automatically updated from my public GitHub activity.
 
 <!-- ACTIVITY:START -->
 - Apr 6, 2026 — Watch [ruvnet/ruflo](https://github.com/ruvnet/ruflo)
@@ -59,40 +62,47 @@ I build **AI-powered tools** at the intersection of machine learning, finance, a
 
 ## 🧰 Tech Stack
 
-- 🤖 **AI/ML:** Python, PyTorch, TensorFlow, OpenCV, Scikit-learn
-- 🛠️ **Backend & Realtime:** FastAPI, Flask, Fastify, Redis, Socket.io
-- ⚛️ **Frontend:** React, Next.js, TypeScript, PixiJS
-- 🗄️ **Data & Infra:** MongoDB, PostgreSQL, Docker, Linux, Git
-- 💻 **Core Languages:** C, Bash/Shell, JavaScript
-- 🧩 **Tooling:** Turborepo, Jupyter Notebooks
+| What I build | Main tools |
+| :--- | :--- |
+| **Computer vision & ML experiments** | Python, PyTorch, TensorFlow, OpenCV, Scikit-learn |
+| **Real-time backends & APIs** | FastAPI, Flask, Fastify, Redis, Socket.io |
+| **Interactive web apps** | React, Next.js, TypeScript, PixiJS |
+| **Data, infra & operations** | PostgreSQL, MongoDB, Docker, Linux, Git |
+| **Systems & scripting fundamentals** | C, Bash/Shell, JavaScript |
+
+---
+
+## 🤝 What I'm Looking For
+
+- **Master's alternance (2026-2028)** in AI/ML, computer vision, or applied distributed systems.
+- **Mission types:** model prototyping, real-time backend engineering, and production-oriented experimentation.
+- **Work setup:** South of France preferred, open to hybrid/remote depending on the team.
 
 ---
 
 ## 🚀 Projects Lab
 
-### 🎮 Public Projects
+### 🎯 Current Main Projects
 | Project | Description | Stack |
 | :--- | :--- | :--- |
-| **[Pokémon Blue AI Agent](https://github.com/MaKSiiMe/PokemonBlueExperiments)** | Autonomous RL agent beating the first champion with YOLO + PPO/DQN. | `PyTorch` `YOLO` `OpenAI Gym` |
-| **[VoxelPlace](https://github.com/MaKSiiMe/VoxelPlace)** | Real-time collaborative pixel art in Minecraft. Browser & server sync with WebSocket. | `Next.js` `Fastify` `Socket.io` `Redis` `TypeScript` |
-| **[Holberton-RPG](https://github.com/MaKSiiMe/Holberton-RPG)** | MMORPG-style dashboard with Holberton API integration (gamification). | `FastAPI` `MongoDB` `React` |
+| **[Pokémon Blue AI Agent](https://github.com/MaKSiiMe/PokemonBlueExperiments)** | Modular RL + CV agent for Pokémon Blue, combining PPO/DQN with YOLO for autonomous navigation and battle decisions. **Result:** reached and beat the first Champion autonomously. | `Python` `PyTorch` `YOLO` `OpenAI Gym` `PyBoy` |
+| **[VoxelPlace](https://github.com/MaKSiiMe/VoxelPlace)** | Real-time collaborative pixel canvas playable from browser and Minecraft, with synchronized state across clients and server. **Result:** one shared canvas synchronized across **2 client environments** (web + Minecraft). | `Next.js` `Fastify` `Socket.io` `Redis` `TypeScript` `Java` |
 
 
 
 ---
 
 ## 🧭 Current Focus & Learning
-* **Holberton School:** Math foundations (Linear Algebra, Calculus), CNNs, Object Detection, Neural Style Transfer.  
-* **Hackathons & évents:** Chiliz Hackathon (Sport×Blockchain), Proof of Talk, VivaTech.  
-* **Status:** ⏸️ Web3 dev paused to focus on **AI/ML fundamentals**.
+- **AI/ML Foundations:** Linear algebra, calculus, CNNs, object detection, and model evaluation.
+- **Applied Engineering:** Building end-to-end projects that combine ML, Web3 components, and real-time backend systems.
+- **Community & Events:** Chiliz Hackathon (Sport x Blockchain), Proof of Talk, VivaTech.
 
 ---
 
 ## 📊 GitHub Stats
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=MaKSiiMe&show_icons=true&theme=github_dark&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github&cache_seconds=1800" height="170" alt="GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MaKSiiMe&layout=compact&theme=github_dark&hide_border=true&langs_count=8&cache_seconds=1800" height="170" alt="Top Languages" />
-  <br/>
-  <img src="https://streak-stats.demolab.com?user=MaKSiiMe&theme=github-dark-blue&hide_border=true" height="170" alt="GitHub Streak" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=MaKSiiMe&theme=github_dark" width="100%" alt="GitHub Profile Summary" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=MaKSiiMe&theme=github_dark" height="170" alt="Repositories by Language" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=MaKSiiMe&theme=github_dark" height="170" alt="Most Commit Language" />
 </div>

@@ -3,7 +3,11 @@ name: Update profile README (latest activity)
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 5 * * 1"  # 05:00 UTC every Monday (~06:00/07:00 Europe/Paris)
+    - cron: "0 5 * * *"  # 05:00 UTC every day (~06:00/07:00 Europe/Paris)
+
+concurrency:
+  group: update-readme-${{ github.repository }}
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -27,6 +31,7 @@ jobs:
             const candidates = ['README.md','Readme.md','README.MD','readme.md'];
             const readmePath = candidates.find(p => fs.existsSync(p));
             if (!readmePath) { core.setFailed('README file not found.'); process.exit(1); }
+            core.exportVariable('README_PATH', readmePath);
 
             // Ensure ACTIVITY section exists
             function ensureSection(tag, title, md) {
@@ -72,18 +77,40 @@ jobs:
               });
             }
 
+            let hadApiFailure = false;
+
             // Fetch recent events
-            const { data: eventsRaw } = await github.rest.activity.listPublicEventsForUser({
-              username,
-              per_page: 50
-            }).catch(() => ({ data: [] }));
+            let eventsRaw = [];
+            try {
+              const { data } = await github.rest.activity.listPublicEventsForUser({
+                username,
+                per_page: 50
+              });
+              eventsRaw = data || [];
+            } catch (err) {
+              hadApiFailure = true;
+              core.warning(`Failed to fetch public events: ${err.message || err}`);
+            }
 
             // Fetch recent stars
-            const { data: starsRaw } = await github.rest.activity.listReposStarredByUser({
-              username,
-              per_page: 50,
-              headers: { accept: 'application/vnd.github.v3.star+json' }
-            }).catch(() => ({ data: [] }));
+            let starsRaw = [];
+            try {
+              const { data } = await github.rest.activity.listReposStarredByUser({
+                username,
+                per_page: 50,
+                headers: { accept: 'application/vnd.github.v3.star+json' }
+              });
+              starsRaw = data || [];
+            } catch (err) {
+              hadApiFailure = true;
+              core.warning(`Failed to fetch starred repositories: ${err.message || err}`);
+            }
+
+            // If APIs failed and no data is available, keep current README content.
+            if (hadApiFailure && eventsRaw.length === 0 && starsRaw.length === 0) {
+              core.warning('Skipping README update to avoid overwriting activity with fallback content.');
+              return;
+            }
 
             const eventItems = (eventsRaw || []).map(e => ({
               type: e.type,
@@ -104,7 +131,7 @@ jobs:
               };
             });
 
-            // Merge & sort all activities (no time limit)
+            // Merge & sort currently available activity items
             let merged = [...eventItems, ...starItems]
               .filter(x => x.repo && x.url && x.date)
               .sort((a,b) => new Date(b.date) - new Date(a.date));
@@ -142,14 +169,13 @@ jobs:
 
       - name: Commit & push if changed
         run: |
-          if [[ -n "$(git status --porcelain)" ]]; then
+          readme_path="${README_PATH:-README.md}"
+          if [[ -n "$(git status --porcelain -- "$readme_path")" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -A
+            git add "$readme_path"
             git commit -m "chore(readme): update recent activity"
             git push
           else
             echo "No changes to commit."
           fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
