@@ -47,10 +47,10 @@ I build **practical AI/ML tools** with a focus on computer vision, automation, a
 Automatically updated from my public GitHub activity.
 
 <!-- ACTIVITY:START -->
-- Apr 28, 2026 — Watch [PyPlanet/PyPlanet](https://github.com/PyPlanet/PyPlanet)
-- Apr 28, 2026 — ⭐ Starred [PyPlanet/PyPlanet](https://github.com/PyPlanet/PyPlanet)
-- Apr 27, 2026 — Watch [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills)
-- Apr 27, 2026 — ⭐ Starred [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills)
+- Apr 29, 2026 — Watch [warpdotdev/warp](https://github.com/warpdotdev/warp)
+- Apr 29, 2026 — ⭐ Starred [warpdotdev/warp](https://github.com/warpdotdev/warp)
+- Apr 28, 2026 — Watch [Facepunch/sbox-public](https://github.com/Facepunch/sbox-public)
+- Apr 28, 2026 — ⭐ Starred [Facepunch/sbox-public](https://github.com/Facepunch/sbox-public)
 - Apr 27, 2026 — 📤 Pushed [🔥 MaKSiiMe/holbertonschool-interview](https://github.com/MaKSiiMe/holbertonschool-interview)
 - Apr 25, 2026 — 📤 Pushed [🔥 MaKSiiMe/VoxelPlace](https://github.com/MaKSiiMe/VoxelPlace)
 <!-- ACTIVITY:END -->
