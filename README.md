@@ -47,10 +47,11 @@ I build **practical AI/ML tools** with a focus on computer vision, automation, a
 Automatically updated from my public GitHub activity.
 
 <!-- ACTIVITY:START -->
+- Jul 2, 2026 — Watch [qqqqqf-q/ai-model-fingerprint](https://github.com/qqqqqf-q/ai-model-fingerprint)
+- Jul 2, 2026 — ⭐ Starred [qqqqqf-q/ai-model-fingerprint](https://github.com/qqqqqf-q/ai-model-fingerprint)
 - Jun 25, 2026 — Watch [SeanCole02/doom-neuron](https://github.com/SeanCole02/doom-neuron)
 - Jun 25, 2026 — ⭐ Starred [SeanCole02/doom-neuron](https://github.com/SeanCole02/doom-neuron)
 - Jun 22, 2026 — 📤 Pushed [🔥 MaKSiiMe/VoxelPlace](https://github.com/MaKSiiMe/VoxelPlace)
-- Apr 29, 2026 — ⭐ Starred [warpdotdev/warp](https://github.com/warpdotdev/warp)
 <!-- ACTIVITY:END -->
 
 </details>
