@@ -47,6 +47,7 @@ I build **practical AI/ML tools** with a focus on computer vision, automation, a
 Automatically updated from my public GitHub activity.
 
 <!-- ACTIVITY:START -->
+- Jul 31, 2026 — 🆕 Created [🔥 MaKSiiMe/LearnTensor](https://github.com/MaKSiiMe/LearnTensor)
 - Jul 2, 2026 — Watch [qqqqqf-q/ai-model-fingerprint](https://github.com/qqqqqf-q/ai-model-fingerprint)
 - Jun 25, 2026 — ⭐ Starred [SeanCole02/doom-neuron](https://github.com/SeanCole02/doom-neuron)
 - Apr 29, 2026 — ⭐ Starred [warpdotdev/warp](https://github.com/warpdotdev/warp)
