@@ -47,10 +47,11 @@ I build **practical AI/ML tools** with a focus on computer vision, automation, a
 Automatically updated from my public GitHub activity.
 
 <!-- ACTIVITY:START -->
+- Aug 14, 2026 — Watch [github/spec-kit](https://github.com/github/spec-kit)
+- Aug 14, 2026 — ⭐ Starred [github/spec-kit](https://github.com/github/spec-kit)
 - Aug 7, 2026 — Watch [karpathy/nanochat](https://github.com/karpathy/nanochat)
 - Aug 7, 2026 — ⭐ Starred [karpathy/nanochat](https://github.com/karpathy/nanochat)
 - Jul 31, 2026 — 🆕 Created [🔥 MaKSiiMe/LearnTensor](https://github.com/MaKSiiMe/LearnTensor)
-- Jun 25, 2026 — ⭐ Starred [SeanCole02/doom-neuron](https://github.com/SeanCole02/doom-neuron)
 <!-- ACTIVITY:END -->
 
 </details>
