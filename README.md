@@ -51,7 +51,6 @@ Automatically updated from my public GitHub activity.
 - Aug 14, 2026 — ⭐ Starred [github/spec-kit](https://github.com/github/spec-kit)
 - Aug 7, 2026 — Watch [karpathy/nanochat](https://github.com/karpathy/nanochat)
 - Aug 7, 2026 — ⭐ Starred [karpathy/nanochat](https://github.com/karpathy/nanochat)
-- Jul 31, 2026 — 🆕 Created [🔥 MaKSiiMe/LearnTensor](https://github.com/MaKSiiMe/LearnTensor)
 <!-- ACTIVITY:END -->
 
 </details>
