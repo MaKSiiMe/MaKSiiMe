@@ -47,10 +47,10 @@ I build **practical AI/ML tools** with a focus on computer vision, automation, a
 Automatically updated from my public GitHub activity.
 
 <!-- ACTIVITY:START -->
+- Sep 2, 2026 — Watch [itsfatduck/optimizerDuck](https://github.com/itsfatduck/optimizerDuck)
+- Sep 2, 2026 — ⭐ Starred [itsfatduck/optimizerDuck](https://github.com/itsfatduck/optimizerDuck)
 - Aug 14, 2026 — Watch [github/spec-kit](https://github.com/github/spec-kit)
 - Aug 14, 2026 — ⭐ Starred [github/spec-kit](https://github.com/github/spec-kit)
-- Aug 7, 2026 — Watch [karpathy/nanochat](https://github.com/karpathy/nanochat)
-- Aug 7, 2026 — ⭐ Starred [karpathy/nanochat](https://github.com/karpathy/nanochat)
 <!-- ACTIVITY:END -->
 
 </details>
