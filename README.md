@@ -10,14 +10,14 @@
   <a href="https://github.com/MaKSiiMe" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
   </a>
-  <a href="mailto:9865@holbertonstudents.com">
+  <a href="mailto:maxime.truel@proton.me">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
   </a>
 
   <br />
 
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=38BDF8&center=true&vCenter=true&width=760&lines=Building+practical+AI%2FML+and+Web3+projects;Focus+on+Computer+Vision+and+Real-time+Systems;Internship+at+Manako+(SN44+on+Bittensor)" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=38BDF8&center=true&vCenter=true&width=760&lines=Building+practical+AI%2FML+and+Web3+projects;Focus+on+Computer+Vision+and+Real-time+Systems;Now+shipping+Rust%2C+RL+and+real-time+backends;Ex-intern+at+Manako+(SN44+on+Bittensor)" alt="Typing SVG" />
   </a>
 
 </div>
@@ -25,10 +25,10 @@
 ---
 
 ## 🎯 Quick Overview
-**Internship**: ✅ May–August 2026 at **Manako** (team behind **SN44/Score** on Bittensor)  
-**Master's Program**: Open to work-study alternance for 2026–2028  
+**Internship**: ✅ Completed May–August 2026 at **Manako** (team behind **SN44/Score** on Bittensor)  
+**Status**: Open to work — looking for a full-time position  
 **Focus**: Computer vision, ML systems, Web3, and real-time applications  
-**Education**: Year 2 @ [Holberton School](https://www.holbertonschool.fr/) — [RNCP Level 6](https://www.francecompetences.fr/recherche/rncp/37873/)
+**Education**: Graduate of [Holberton School](https://www.holbertonschool.fr/) — [RNCP Level 6](https://www.francecompetences.fr/recherche/rncp/37873/)
 
 ---
 
@@ -36,9 +36,10 @@
 I build **practical AI/ML tools** with a focus on computer vision, automation, and real-time systems. I care about shipping projects that are understandable, testable, and documented well enough for other developers to reuse.
 
 **What I spend time on now:**
-- 🤖 **Machine Learning & AI** — Computer vision, model training, and deployment-oriented experiments
-- ⛓️ **Web3 & real-time systems** — Decentralized experiments, WebSocket-based architecture, backend orchestration, and state sync
-- 🏠 **Home Lab** — Hosting VoxelPlace services and testing new infrastructure setups
+- 🤖 **Machine Learning & AI** — Reinforcement learning, computer vision, time-series models (LSTM → ONNX), and deployment-oriented experiments
+- ⛓️ **Web3 & real-time systems** — Bittensor tooling, trading-bot experiments, WebSocket-based architecture, backend orchestration, and state sync
+- 🦀 **Systems programming** — A Rust game-server controller (PitWall), after years of C at Holberton
+- 🏠 **Home Lab** — Self-hosting my projects on a Debian server (Docker, Portainer, Redis) and testing new infrastructure setups
 
 <details>
 <summary>📌 <b>Recent Activity Log</b> (Click to expand)</summary>
@@ -64,17 +65,17 @@ Automatically updated from my public GitHub activity.
 
 | What I build | Main tools |
 | :--- | :--- |
-| **Computer vision & ML experiments** | Python, PyTorch, TensorFlow, OpenCV, Scikit-learn |
-| **Real-time backends & APIs** | FastAPI, Flask, Fastify, Redis, Socket.io |
+| **Computer vision & ML experiments** | Python, PyTorch, Stable-Baselines3, ONNX, TensorFlow, OpenCV, Scikit-learn |
+| **Real-time backends & APIs** | FastAPI, Flask, Fastify, Redis, Socket.io, WebSocket |
 | **Interactive web apps** | React, Next.js, TypeScript, PixiJS |
-| **Data, infra & operations** | PostgreSQL, MongoDB, Docker, Linux, Git |
-| **Systems & scripting fundamentals** | C, Bash/Shell, JavaScript |
+| **Data, infra & operations** | PostgreSQL, SQLite, MongoDB, Docker, Portainer, GitHub Actions, Linux, Git |
+| **Systems & scripting fundamentals** | Rust, C, Bash/Shell, JavaScript |
 
 ---
 
 ## 🤝 What I'm Looking For
 
-- **Master's alternance (2026-2028)** in AI/ML, computer vision, or applied distributed systems.
+- **A full-time position** in AI/ML, computer vision, or applied distributed systems.
 - **Mission types:** model prototyping, real-time backend engineering, and production-oriented experimentation.
 - **Work setup:** South of France preferred, open to hybrid/remote depending on the team.
 
@@ -82,19 +83,20 @@ Automatically updated from my public GitHub activity.
 
 ## 🚀 Projects Lab
 
-### 🎯 Current Main Projects
+### 🎯 Main Projects
 | Project | Description | Stack |
 | :--- | :--- | :--- |
-| **[Pokémon Blue AI Agent](https://github.com/MaKSiiMe/PokemonBlueExperiments)** | Modular RL + CV agent for Pokémon Blue, combining PPO/DQN with YOLO for autonomous navigation and battle decisions. **Result:** reached and beat the first Champion autonomously. | `Python` `PyTorch` `YOLO` `OpenAI Gym` `PyBoy` |
-| **[VoxelPlace](https://github.com/MaKSiiMe/VoxelPlace)** | Real-time collaborative pixel canvas playable from browser and Minecraft, with synchronized state across clients and server. **Result:** one shared canvas synchronized across **2 client environments** (web + Minecraft). | `Next.js` `Fastify` `Socket.io` `Redis` `TypeScript` `Java` |
-
+| **[Pokémon Blue AI Agent](https://github.com/MaKSiiMe/PokemonBlueExperiments)** | Modular RL + CV agent for Pokémon Blue: a hybrid observation space (screen pixels + visit map + RAM) trained with MaskablePPO and a CNN+GRU policy. **Result:** a scripted baseline reaches 4 badges (Erika) in 8/8 runs; the end-to-end RL run to the first badge is in training. | `Python` `PyTorch` `Stable-Baselines3` `PyBoy` |
+| **[VoxelPlace](https://github.com/MaKSiiMe/VoxelPlace)** | Real-time collaborative pixel canvas playable from browser and Minecraft, with synchronized state across clients and server. **Result:** one shared canvas synchronized across **2 client environments** (web + Minecraft), 298 passing tests. | `Next.js` `Fastify` `Socket.io` `Redis` `PostgreSQL` `TypeScript` `Java` |
+| **[PitWall](https://github.com/MaKSiiMe/PitWall)** | Trackmania 2020 dedicated-server controller for cups, LAN events and team matches: hot format switching, a TOML-driven cup engine, live in-game UI, web dashboard. Tested against an in-process fake server. | `Rust` `SQLite` `htmx` `Lua` `Docker` |
+| **[WikiMastered](https://github.com/MaKSiiMe/WikiMastered)** | Headless Dockerized bot for the WikiMasters card game: independent workers (auction sniper, inventory, collection, achievements, value scan) that talk to the site's JSON routes and report to Discord. Dry-run by default. | `Python` `httpx` `SQLite` `Docker` |
 
 
 ---
 
 ## 🧭 Current Focus & Learning
-- **AI/ML Foundations:** Linear algebra, calculus, CNNs, object detection, and model evaluation.
-- **Applied Engineering:** Building end-to-end projects that combine ML, Web3 components, and real-time backend systems.
+- **AI/ML Foundations:** Linear algebra, calculus, CNNs, reinforcement learning, and model evaluation.
+- **Applied Engineering:** Building end-to-end projects that combine ML, Web3 components, and real-time backend systems — now with more Rust.
 - **Community & Events:** Chiliz Hackathon (Sport x Blockchain), Proof of Talk, VivaTech.
 
 ---
