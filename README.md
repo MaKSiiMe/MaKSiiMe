@@ -48,10 +48,12 @@ I build **practical AI/ML tools** with a focus on computer vision, automation, a
 Automatically updated from my public GitHub activity.
 
 <!-- ACTIVITY:START -->
+- Nov 18, 2026 — 🔀 PR [🔥 MaKSiiMe/homelab](https://github.com/MaKSiiMe/homelab)
+- Nov 18, 2026 — 🔀 PR [🔥 MaKSiiMe/WikiMastered](https://github.com/MaKSiiMe/WikiMastered)
+- Nov 17, 2026 — 📤 Pushed [🔥 MaKSiiMe/homelab](https://github.com/MaKSiiMe/homelab)
 - Nov 17, 2026 — 📤 Pushed [🔥 MaKSiiMe/VoxelPlace](https://github.com/MaKSiiMe/VoxelPlace)
-- Nov 17, 2026 — 🔀 PR [🔥 MaKSiiMe/VoxelPlace](https://github.com/MaKSiiMe/VoxelPlace)
 - Nov 17, 2026 — Delete [🔥 MaKSiiMe/WikiMastered](https://github.com/MaKSiiMe/WikiMastered)
-- Nov 17, 2026 — 📤 Pushed [🔥 MaKSiiMe/WikiMastered](https://github.com/MaKSiiMe/WikiMastered)
+- Nov 17, 2026 — 🆕 Created [🔥 MaKSiiMe/VoxelPlace](https://github.com/MaKSiiMe/VoxelPlace)
 - Oct 14, 2026 — ⭐ Starred [morluto/rea](https://github.com/morluto/rea)
 - Sep 9, 2026 — ⭐ Starred [omacom/omarchy](https://github.com/omacom/omarchy)
 <!-- ACTIVITY:END -->
