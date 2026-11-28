@@ -48,11 +48,13 @@ I build **practical AI/ML tools** with a focus on computer vision, automation, a
 Automatically updated from my public GitHub activity.
 
 <!-- ACTIVITY:START -->
+- Nov 28, 2026 — 🔀 PR [🔥 MaKSiiMe/homelab](https://github.com/MaKSiiMe/homelab)
+- Nov 28, 2026 — 🔀 PR [🔥 MaKSiiMe/WikiMastered](https://github.com/MaKSiiMe/WikiMastered)
+- Nov 27, 2026 — Delete [🔥 MaKSiiMe/homelab](https://github.com/MaKSiiMe/homelab)
 - Nov 26, 2026 — Watch [VictorCyprien/discord-rich-claude](https://github.com/VictorCyprien/discord-rich-claude)
 - Nov 26, 2026 — ⭐ Starred [VictorCyprien/discord-rich-claude](https://github.com/VictorCyprien/discord-rich-claude)
+- Nov 26, 2026 — Delete [🔥 MaKSiiMe/WikiMastered-extension](https://github.com/MaKSiiMe/WikiMastered-extension)
 - Nov 26, 2026 — 📤 Pushed [🔥 MaKSiiMe/WikiMastered-extension](https://github.com/MaKSiiMe/WikiMastered-extension)
-- Nov 26, 2026 — 🔀 PR [🔥 MaKSiiMe/WikiMastered-extension](https://github.com/MaKSiiMe/WikiMastered-extension)
-- Nov 25, 2026 — Delete [🔥 MaKSiiMe/WikiMastered](https://github.com/MaKSiiMe/WikiMastered)
 - Nov 25, 2026 — 📤 Pushed [🔥 MaKSiiMe/WikiMastered](https://github.com/MaKSiiMe/WikiMastered)
 - Nov 23, 2026 — ⭐ Starred [SatisfactoryTools/SFTools](https://github.com/SatisfactoryTools/SFTools)
 <!-- ACTIVITY:END -->
